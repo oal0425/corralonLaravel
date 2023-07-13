@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\carro;
+use App\Models\Carro;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Producto;
 
 class CarroController extends Controller
 {
@@ -12,7 +14,10 @@ class CarroController extends Controller
      */
     public function index()
     {
-        //
+        $carritos = Carro::all();
+        $usuarios = User::all();
+        $productos = Producto::all();
+        return view('carrito.index', compact('carritos','usuarios','productos'));
     }
 
     /**
@@ -28,7 +33,12 @@ class CarroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $carritos = new Carro;
+        $carritos->id_usuario = $request->input('id_usuario');
+        $carritos->id_producto = $request->input('id_producto');
+        $carritos->cantidad = $request->input('cantidad');
+        $carritos->save();
+        return redirect()->back();
     }
 
     /**
@@ -50,16 +60,23 @@ class CarroController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, carro $carro)
+    public function update(Request $request, $id)
     {
-        //
+        $carritos = Carro::find($id);
+        $carritos->id_usuario = $request->input('id_usuario');
+        $carritos->id_producto = $request->input('id_producto');
+        $carritos->cantidad = $request->input('cantidad');
+        $carritos->save();
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(carro $carro)
+    public function destroy($id)
     {
-        //
+        $carritos = Carro::find($id);
+        $carritos->delete();
+        return redirect()->back();
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\comprobante;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ComprobanteController extends Controller
 {
@@ -12,7 +13,9 @@ class ComprobanteController extends Controller
      */
     public function index()
     {
-        //
+        $comprobantes = Comprobante::all();
+        $usuarios = User::all();
+        return view('comprobante.index', compact('comprobantes','usuarios'));
     }
 
     /**
@@ -28,7 +31,12 @@ class ComprobanteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comprobantes = new Comprobante;
+        $comprobantes->tipo = $request->input('tipo');
+        $comprobantes->fecha = $request->input('fecha');
+        $comprobantes->id_usuario = $request->input('id_usuario');
+        $comprobantes->save();
+        return redirect()->back();
     }
 
     /**
@@ -50,16 +58,23 @@ class ComprobanteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, comprobante $comprobante)
+    public function update(Request $request, $id)
     {
-        //
+        $comprobantes = Comprobante::find($id);
+        $comprobantes->tipo = $request->input('tipo');
+        $comprobantes->fecha = $request->input('fecha');
+        $comprobantes->id_usuario = $request->input('id_usuario');
+        $comprobantes->save();
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(comprobante $comprobante)
+    public function destroy($id)
     {
-        //
+        $comprobantes = Comprobante::find($id);
+        $comprobantes->delete();
+        return redirect()->back();
     }
 }
