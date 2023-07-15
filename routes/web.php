@@ -8,6 +8,7 @@ use App\Http\Controllers\DetalleController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ Route::resource('productos', ProductoController::class);
 Route::resource('proveedores', ProveedorController::class);
 Route::resource('usuarios', UserController::class);
 
-Auth::routes('',);
+Auth::routes();
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
