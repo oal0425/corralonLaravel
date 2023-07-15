@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\detalle;
+use App\Models\producto;
 use Illuminate\Http\Request;
 
 class DetalleController extends Controller
@@ -12,7 +13,10 @@ class DetalleController extends Controller
      */
     public function index()
     {
-        //
+        $detalles = Detalle::all();
+        $productos = Producto::all();
+        return view('productos.index', compact('detalles','productos'));
+
     }
 
     /**
@@ -28,7 +32,10 @@ class DetalleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $detalles = new Detalle;
+        $detalles->cantidad = $request->input('cantidad');
+        $detalles->save();
+        return redirect()->back();
     }
 
     /**
@@ -50,16 +57,21 @@ class DetalleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, detalle $detalle)
+    public function update(Request $request, $id)
     {
-        //
+        $detalles = Detalle::find($id);
+        $detalles->cantidad = $request->input('cantidad');
+        $detalles->save();
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(detalle $detalle)
+    public function destroy($id)
     {
-        //
+        $detalles = Detalle::find($id);
+        $detalles->delete();
+        return redirect()->back();
     }
 }

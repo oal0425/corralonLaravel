@@ -10,7 +10,7 @@ class Proveedor extends Model
     use HasFactory;
     protected $table = 'Proveedor';
     protected $primarykey = 'cuit';
-    protected $fillable = ['razon_social', 'domicilio', 'telefono', 'localidad'];
+    protected $fillable = ['razon_social', 'domicilio_proveedor', 'telefono_proveedor', 'localidad_proveedor'];
     public $timestamps = false;
 
 

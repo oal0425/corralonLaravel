@@ -12,7 +12,8 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        //
+        $proveedores = Proveedor::all();
+        return view('proveedores.index', compact('proveedores'));
     }
 
     /**
@@ -28,7 +29,14 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $proveedores = new Proveedor;
+        $proveedores->cuit = $request->input('cuit');
+        $proveedores->razon_social = $request->input ('razon_social');
+        $proveedores->direccion_proveedor = $request->input('direccion');
+        $proveedores->telefono_proveedor = $request->input('telefono');
+        $proveedores->localidad_proveedor = $request->input ('localidad_proveedor');
+        $proveedores->save();
+        return redirect()->back();
     }
 
     /**
@@ -44,22 +52,30 @@ class ProveedorController extends Controller
      */
     public function edit(proveedor $proveedor)
     {
-        //
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, proveedor $proveedor)
+    public function update(Request $request, $id)
     {
-        //
+        $proveedores = Proveedor::find($id);
+        $proveedores->razon_social = $request->input ('razon_social');
+        $proveedores->direccion_proveedor = $request->input('direccion');
+        $proveedores->telefono_proveedor = $request->input('telefono');
+        $proveedores->localidad_proveedor = $request->input ('localidad_proveedor');
+        $proveedores->save();
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(proveedor $proveedor)
+    public function destroy($id)
     {
-        //
+        $proveedores = Proveedor::find($id);
+        $proveedores->delete();
+        return redirect()->back();
     }
 }
