@@ -17,7 +17,7 @@ class CarroController extends Controller
         $carritos = Carro::all();
         $usuarios = User::all();
         $productos = Producto::all();
-        return view('carrito.index', compact('carritos','usuarios','productos'));
+        return view('carro.index', compact('carritos','usuarios','productos'));
     }
 
     /**
