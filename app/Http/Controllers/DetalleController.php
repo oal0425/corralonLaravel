@@ -15,7 +15,7 @@ class DetalleController extends Controller
     {
         $detalles = Detalle::all();
         $productos = Producto::all();
-        return view('productos.index', compact('detalles','productos'));
+        return view('detalle.index', compact('detalles','productos'));
 
     }
 

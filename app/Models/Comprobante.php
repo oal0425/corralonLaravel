@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Comprobante extends Model
 {
     use HasFactory;
-    protected $table = 'Comprobante';
+    protected $table = 'Comprobantes';
     protected $primarykey = 'id';
-    protected $fillable = ['tipo', 'fecha', 'idUsuario'];
+    protected $fillable = ['tipo', 'fecha', 'id_usuario'];
     public $timestamps = true;
 
 
