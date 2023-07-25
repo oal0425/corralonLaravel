@@ -37,6 +37,7 @@ class ClienteController extends Controller
         $clientes->telefono = $request->input('telefono');
         $clientes->domicilio = $request->input('domicilio');
         $clientes->localidad = $request->input('localidad');
+        $clientes->id_usuario = $request->input('idusuario');
         $clientes->save();
         return redirect()->back();
     }
