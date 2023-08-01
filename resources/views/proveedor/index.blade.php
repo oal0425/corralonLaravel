@@ -27,10 +27,10 @@
             @foreach($proveedores as $proveedor)
             <tr class="">
                 <td scope="row">{{$proveedor->id}}</td>
-                <td>{{$proveedor->razon_social_proveedor}}</td>
-                <td>{{$proveedor->direccion_proveedor}}</td>
+                <td>{{$proveedor->razon_social}}</td>
+                <td>{{$proveedor->domicilio_proveedor}}</td>
                 <td>{{$proveedor->telefono_proveedor}}</td>
-                <td>{{$proveedor->localidad}}</td>
+                <td>{{$proveedor->localidad_proveedor}}</td>
 
                 <td>
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$proveedor->id}}">

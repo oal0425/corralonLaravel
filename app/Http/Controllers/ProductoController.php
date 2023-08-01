@@ -86,7 +86,7 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         $productos = Producto::find($id);
-        $productos->delele();
+        $productos->delete();
         return redirect()->back();
     }
 }

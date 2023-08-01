@@ -10,6 +10,8 @@
             @csrf
             <div class="modal-body">
 
+
+
                 <div class="mb-3">
                     <label for="" class="form-label">NOMBRE</label>
                     <input type="text"

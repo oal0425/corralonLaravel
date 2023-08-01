@@ -30,10 +30,10 @@ class ProveedorController extends Controller
     public function store(Request $request)
     {
         $proveedores = new Proveedor;
-        $proveedores->cuit = $request->input('cuit');
+        $proveedores->id = $request->input('cuit_proveedor');
         $proveedores->razon_social = $request->input ('razon_social');
-        $proveedores->direccion_proveedor = $request->input('direccion');
-        $proveedores->telefono_proveedor = $request->input('telefono');
+        $proveedores->domicilio_proveedor = $request->input('domicilio_proveedor');
+        $proveedores->telefono_proveedor = $request->input('telefono_proveedor');
         $proveedores->localidad_proveedor = $request->input ('localidad_proveedor');
         $proveedores->save();
         return redirect()->back();
@@ -58,12 +58,12 @@ class ProveedorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $cuit)
     {
-        $proveedores = Proveedor::find($id);
+        $proveedores = Proveedor::find($cuit);
         $proveedores->razon_social = $request->input ('razon_social');
-        $proveedores->direccion_proveedor = $request->input('direccion');
-        $proveedores->telefono_proveedor = $request->input('telefono');
+        $proveedores->domicilio_proveedor = $request->input('domicilio_proveedor');
+        $proveedores->telefono_proveedor = $request->input('telefono_proveedor');
         $proveedores->localidad_proveedor = $request->input ('localidad_proveedor');
         $proveedores->save();
         return redirect()->back();
