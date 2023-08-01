@@ -10,3 +10,5 @@
         @csrf
     </form>
 </div>
+
+<h1> Proximamente </h1>
