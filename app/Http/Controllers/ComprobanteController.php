@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\comprobante;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -15,7 +16,8 @@ class ComprobanteController extends Controller
     {
         $comprobantes = Comprobante::all();
         $usuarios = User::all();
-        return view('comprobante.index', compact('comprobantes','usuarios'));
+        $productos = Producto::all();
+        return view('comprobante.index', compact('comprobantes','usuarios', 'productos'));
     }
 
     /**

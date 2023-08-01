@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\detalle;
-use App\Models\producto;
+use App\Models\Detalle;
+use App\Models\Producto;
+use App\Models\Comprobante;
 use Illuminate\Http\Request;
 
 class DetalleController extends Controller
@@ -15,7 +16,8 @@ class DetalleController extends Controller
     {
         $detalles = Detalle::all();
         $productos = Producto::all();
-        return view('detalle.index', compact('detalles','productos'));
+        $comprobantes = Comprobante::all();
+        return view('detalle.index', compact('detalles','productos','comprobantes'));
 
     }
 
@@ -33,6 +35,8 @@ class DetalleController extends Controller
     public function store(Request $request)
     {
         $detalles = new Detalle;
+        $detalles->id_comprobante = $request->input('id_comprobante');
+        $detalles->id_producto = $request->input('id_producto');
         $detalles->cantidad = $request->input('cantidad');
         $detalles->save();
         return redirect()->back();

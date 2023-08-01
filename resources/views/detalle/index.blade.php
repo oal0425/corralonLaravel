@@ -25,16 +25,16 @@
         <tbody>
             @foreach($detalles as $detalle)
             <tr class="">
-                <td scope="row">{{$detalles->id}}</td>
-                <td>{{$detalles->Comprobante->id}}</td>
-                <td>{{$detalles->Producto->id}}</td>
-                <td>{{$detalles->cantidad}}</td>
+                <td scope="row">{{$detalle->id}}</td>
+                <td>{{$detalle->Comprobante->id}}</td>
+                <td>{{$detalle->Producto->id}}</td>
+                <td>{{$detalle->cantidad}}</td>
 
                 <td>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$detalles->id}}">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$detalle->id}}">
                         EDITAR
                     </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$detalles->id}}">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$detalle->id}}">
                         ELIMINAR
                     </button>
                 </td>

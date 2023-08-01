@@ -50,14 +50,6 @@
                     </select>
                 </div>
 
-                <div class="mb-3">
-                    <label for="" class="form-label">USUARIO</label>
-                    <select name='idusuario' id="" class="form-control">
-                        @foreach($usuarios as $usuario)
-                            <option value="{{$usuario->id}}"> {{$usuario->nombre}} </option>
-                        @endforeach
-                    </select>
-                </div>
 
             </div>
             <div class="modal-footer">
