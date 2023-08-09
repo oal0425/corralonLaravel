@@ -69,7 +69,7 @@
                   <div>
                     <a href="{{route('login')}}" class="btn btn-outline-primary">LOGIN</a>
                     <a href="{{route('register')}}" class="btn btn-outline-warning">Registrar</a>
-
+                    <a href="{{url('imprimir')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </div>
 
               </nav>

@@ -27,3 +27,5 @@ the products stored in the database
 */
 
 Route::get('/producto', [ApiController::class,'producto']);
+Route::get('/proveedor', [ApiController::class,'proveedor'] );
+Route::get('/cliente', [ApiController::class,'cliente']);
