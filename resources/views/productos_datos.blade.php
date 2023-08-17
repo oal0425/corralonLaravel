@@ -1,13 +1,3 @@
-@extends('welcome')
-
-@section ('content')
-
-<div>
-    <br>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
-        NUEVO
-    </button>
-</div>
 
 <div class="table-responsive">
     <br>
@@ -41,24 +31,11 @@
                 <td>{{$producto->stock_minimo}}</td>
                 <td>{{$producto->stock_repo}}</td>
                 <td>{{$producto->Proveedor->razon_social}}</td>
-                <td>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$producto->id}}">
-                        EDITAR
-                    </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$producto->id}}">
-                        ELIMINAR
-                    </button>
-                    <a href="{{url('imprimir_producto')}}" class="btn btn-outline-primary"> Imprimir </a>
-                </td>
+
             </tr>
-            @include('producto.info')
+
             @endforeach
         </tbody>
     </table>
 </div>
-
-@include('producto.create')
-
-
-@endsection
 
