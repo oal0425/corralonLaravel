@@ -7,6 +7,10 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
         NUEVO
     </button>
+
+    <a href="{{url('imprimir_cliente')}}" class="btn btn-outline-primary"> Imprimir </a>
+
+    <a href="{{url('generar_xml_cliente')}}" class="btn btn-outline-primary"> Generar XML </a>
 </div>
 
 <div class="table-responsive">
@@ -43,6 +47,7 @@
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$cliente->id}}">
                         ELIMINAR
                     </button>
+
                 </td>
             </tr>
             @include('cliente.info')
