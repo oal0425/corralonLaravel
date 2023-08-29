@@ -8,13 +8,13 @@ class CartController extends Controller
     public function shop()
     {
         $products = Producto::all();
-        dd($products);
+        //dd($products);
         return view('shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['products' => $products]);
     }
 
     public function cart()  {
         $cartCollection = \Cart::getContent();
-        dd($cartCollection);
+        //dd($cartCollection);
         return view('cart')->withTitle('E-COMMERCE STORE | CART')->with(['cartCollection' => $cartCollection]);;
     }
 

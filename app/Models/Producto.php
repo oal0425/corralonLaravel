@@ -10,7 +10,19 @@ class Producto extends Model
     use HasFactory;
     protected $table = 'Products';
     protected $primarykey = 'id';
-    protected $fillable = ['nombre', 'marca', 'fecha_vencimiento', 'fecha_elaboracion', 'precio', 'stock_actual', 'stock_minimo', 'stock_repo', 'id_proveedor'];
+    protected $fillable = ['name',
+                        'slug',
+                        'details',
+                        'price',
+                        'shipping_cost',
+                        'description',
+                        'category_id',
+                        'stock_actual',
+                        'stock_minimo',
+                        'stock_repo',
+                        'brand_id',
+                        'image_path',
+                        'id_proveedor'];
     public $timestamps = false;
 
     public function Proveedor(){

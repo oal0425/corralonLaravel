@@ -32,11 +32,11 @@
             @foreach($productos as $producto)
             <tr class="">
                 <td scope="row">{{$producto->id}}</td>
-                <td>{{$producto->nombre}}</td>
-                <td>{{$producto->marca}}</td>
-                <td>{{$producto->fecha_vencimiento}}</td>
-                <td>{{$producto->fecha_elaboracion}}</td>
-                <td>{{$producto->precio}}</td>
+                <td>{{$producto->name}}</td>
+                <td>{{$producto->details}}</td>
+                <td>{{$producto->price}}</td>
+                <td>{{$producto->description}}</td>
+
                 <td>{{$producto->stock_actual}}</td>
                 <td>{{$producto->stock_minimo}}</td>
                 <td>{{$producto->stock_repo}}</td>

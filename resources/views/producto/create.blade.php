@@ -22,21 +22,15 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="" class="form-label">FECHA VENCIMIENTO</label>
-                    <input type="text"
-                    class="form-control" name="fecha_vencimiento" id="" aria-describedby="helpId" placeholder="">
-                </div>
-
-                <div class="mb-3">
-                    <label for="" class="form-label"> FECHA ELABORACION</label>
-                    <input type="text"
-                    class="form-control" name="fecha_elaboracion" id="" aria-describedby="helpId" placeholder="">
-                </div>
-
-                <div class="mb-3">
                     <label for="" class="form-label"> PRECIO</label>
                     <input type="text"
                     class="form-control" name="precio" id="" aria-describedby="helpId" placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label"> Descripcion</label>
+                    <input type="text"
+                    class="form-control" name="descripcion" id="" aria-describedby="helpId" placeholder="">
                 </div>
 
                 <div class="mb-3">

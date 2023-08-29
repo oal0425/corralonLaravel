@@ -64,12 +64,16 @@
                           <a class="nav-link" href="{{url ('comprobantes')}}">COMPROBANTES</a>
                       </li>
 
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{url ('shop')}}">Comprar</a>
+                    </li>
+
                   </ul>
 
                   <div>
                     <a href="{{route('login')}}" class="btn btn-outline-primary">LOGIN</a>
                     <a href="{{route('register')}}" class="btn btn-outline-warning">Registrar</a>
-                    
+
                 </div>
 
               </nav>
