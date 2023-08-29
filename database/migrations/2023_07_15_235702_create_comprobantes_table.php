@@ -12,10 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('comprobantes', function (Blueprint $table) {
-            $table->primary('id_comprobante');
+            $table->id();
             $table->string('tipo');
             $table->timestamp('fecha');
-            $table->index('id_usuario');
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete("cascade")
+                  ->onUpdate("cascade");
         });
     }
 

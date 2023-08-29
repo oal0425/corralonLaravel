@@ -42,7 +42,12 @@ Route::get('generar_xml_proveedor', [GeneradorController::class, 'generar_xml_pr
 Route::get('generar_xml_producto', [GeneradorController::class, 'generar_xml_producto']);
 Route::get('generar_xml_comprobante', [GeneradorController::class, 'generar_xml_comprobante']);
 
-
+Route::get('/shop', [CartController::class, 'shop'])->name('shop');
+Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
+Route::post('/add', [CartController::class, 'add'])->name('cart.store');
+Route::post('/update', [CartController::class, 'update'])->name('cart.update');
+Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 
 Auth::routes();

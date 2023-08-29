@@ -12,9 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('detalles', function (Blueprint $table) {
-            $table->primary('id_detalle');
-            $table->index('id_comprobante');
-            $table->index('id_producto');
+            $table->id();
+            $table->unsignedBigInteger('id_comprobante');
+            $table->foreign('id_comprobante')
+                  ->references('id')
+                  ->on('comprobantes')
+                  ->onDelete("cascade")
+                  ->onUpdate("cascade");
+            /*
+            $table->unsignedBigInteger('id_producto');
+            $table->foreign('id_producto')
+                  ->references('id')
+                  ->on('products')
+                  ->onDelete("cascade")
+                  ->onUpdate("cascade");
+            */
             $table->integer('cantidad');
         });
     }
