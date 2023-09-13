@@ -14,6 +14,24 @@ use Illuminate\Support\Facades\Response as FacadeResponse;
 class GeneradorController extends Controller
 {
 
+    public function obtener_productos_stock_minimo(){
+        $productos = Producto::where("stock_actual", "<", 50)->get();
+        return $productos;
+    }
+
+    public function imprimir_productos_stock_minimo()
+    {
+        $productos = $this->obtener_productos_stock_minimo();
+        if (!$productos){
+            return redirect()
+                    ->route("cart.index")
+                    ->with("mensaje", "No hay productos con stock minimo");
+        }
+        else{
+            $pdf = PDF::loadView('productos_stock_minimo',compact('productos'));
+            return $pdf->download('productos_stock_minimo.pdf');
+        }
+    }
 
     public function imprimir_cliente (){
         $clientes = Cliente::all();

@@ -38,6 +38,7 @@ Route::get('imprimir_cliente', [GeneradorController::class, 'imprimir_cliente'])
 Route::get('imprimir_proveedor', [GeneradorController::class, 'imprimir_proveedor']);
 Route::get('imprimir_producto', [GeneradorController::class, 'imprimir_producto']);
 Route::get('imprimir_comprobante', [GeneradorController::class, 'imprimir_comprobante']);
+Route::get('imprimir_producto_stock_minimo', [GeneradorController::class, 'imprimir_productos_stock_minimo']);
 Route::get('generar_xml_cliente', [GeneradorController::class, 'generar_xml_cliente']);
 Route::get('generar_xml_proveedor', [GeneradorController::class, 'generar_xml_proveedor']);
 Route::get('generar_xml_producto', [GeneradorController::class, 'generar_xml_producto']);
