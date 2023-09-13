@@ -21,7 +21,7 @@ class CartController extends Controller
 
     public function remove(Request $request){
         Cart::remove($request->id);
-        return redirect()->route('cart.index')->with('success_msg', 'Item is removed!');
+        return redirect()->route('cart.index')->with('success_msg', 'El producto ha sido removido!');
     }
 
     public function add(Request$request){
@@ -39,14 +39,24 @@ class CartController extends Controller
     }
 
     public function update(Request $request){
-        \Cart::update($request->id,
+
+        $producto = $this->buscarProducto($request->id);
+        if ($producto->stock_actual >= $request->quantity){
+            \Cart::update($request->id,
             array(
                 'quantity' => array(
                 'relative' => false,
                 'value' => $request->quantity
                 ),
         ));
-        return redirect()->route('cart.index')->with('success_msg', 'Cart is Updated!');
+        return redirect()->route('cart.index')->with('success_msg', 'El carro se ha actualizado!');
+        }
+        else{
+            return redirect()->route("cart.index")->with('success_msg', 'No se pueden agregar más productos de este tipo, No hay suficiente STOCK');
+        }
+
+
+
     }
 
     public function clear(){
@@ -54,5 +64,23 @@ class CartController extends Controller
         return redirect()->route('cart.index')->with('success_msg', 'Car is cleared!');
     }
 
+    public function buscarProducto($id){
+        $producto = Producto::find($id);
+        return $producto;
+    }
 
+
+    /*
+        public function update(Request $request){
+        \Cart::update($request->id,
+            array(
+                'quantity' => array(
+                'relative' => false,
+                'value' => $request->quantity
+                ),
+        ));
+        return redirect()->route('cart.index')->with('success_msg', 'El carro se ha actualizado!');
+    }
+
+    */
 }
