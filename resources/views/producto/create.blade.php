@@ -6,6 +6,7 @@
           <h5 class="modal-title" id="exampleModalLabel">AGREGAR PRODUCTO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <form action="{{route('productos.store')}}" method="POST">
             @csrf
             <div class="modal-body">
@@ -16,9 +17,9 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="" class="form-label">MARCA</label>
+                    <label for="" class="form-label">Detalles</label>
                     <input type="text"
-                    class="form-control" name="marca" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="detalles" id="" aria-describedby="helpId" placeholder="">
                 </div>
 
                 <div class="mb-3">
@@ -70,3 +71,4 @@
       </div>
     </div>
   </div>
+

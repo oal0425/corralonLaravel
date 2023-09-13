@@ -13,14 +13,21 @@ return new class extends Migration
     {
         Schema::create('comprobantes', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo');
-            $table->timestamp('fecha');
+
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')
                   ->references('id')
                   ->on('users')
                   ->onDelete("cascade")
                   ->onUpdate("cascade");
+
+            $table->unsignedBigInteger('id_detalle');
+            $table->foreign('id_detalle')
+                  ->references('id')
+                  ->on('detalles')
+                  ->onDelete("cascade")
+                  ->onUpdate("cascade");
+            $table->timestamp('fecha');
         });
     }
 

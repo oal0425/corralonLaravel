@@ -16,7 +16,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">NOMBRE</th>
-                <th scope="col">MARCA</th>
+                <th scope="col">DETALLES</th>
                 <th scope="col">FECHA VENCIMIENTO</th>
                 <th scope="col">FECHA ELABORACION</th>
                 <th scope="col">PRECIO</th>

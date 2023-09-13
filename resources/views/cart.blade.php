@@ -38,10 +38,10 @@
             <div class="col-lg-7">
                 <br>
                 @if(\Cart::getTotalQuantity()>0)
-                    <h4>{{ \Cart::getTotalQuantity()}} Product(s) In Your Cart</h4><br>
+                    <h4>{{ \Cart::getTotalQuantity()}} Producto(s) en el carrito</h4><br>
                 @else
                     <h4>No Product(s) In Your Cart</h4><br>
-                    <a href="/" class="btn btn-dark">Continue Shopping</a>
+                    <a href="/" class="btn btn-dark">Continuar Vendiendo</a>
                 @endif
 
                 @foreach($cartCollection as $item)
@@ -81,7 +81,7 @@
                 @if(count($cartCollection)>0)
                     <form action="{{ route('cart.clear') }}" method="POST">
                         {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md">Clear Cart</button>
+                        <button class="btn btn-secondary btn-md">Vaciar el Carrito</button>
                     </form>
                 @endif
             </div>
@@ -92,8 +92,11 @@
                             <li class="list-group-item"><b>Total: </b>${{ \Cart::getTotal() }}</li>
                         </ul>
                     </div>
-                    <br><a href="/shop" class="btn btn-dark">Continue Shopping</a>
-                    <a href="/checkout" class="btn btn-success">Proceed To Checkout</a>
+                    <br><a href="/shop" class="btn btn-dark">Continuar Comprando</a>
+                    <br>
+
+                    <a href="{{url('generar_detalle') }}" class="btn btn-success">Generar Factura</a>
+                    <a href="{{url('imprimir_proveedor')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </div>
             @endif
         </div>

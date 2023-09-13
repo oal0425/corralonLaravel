@@ -34,11 +34,33 @@ class DetalleController extends Controller
      */
     public function store(Request $request)
     {
+        /*
+        $carro = $request->input('carro_lleno');
         $detalles = new Detalle;
-        $detalles->id_comprobante = $request->input('id_comprobante');
-        $detalles->id_producto = $request->input('id_producto');
-        $detalles->cantidad = $request->input('cantidad');
+        $detalles->id_producto = $carro->id;
+        $detalles->nombre = $carro->name;
+        $detalles->precio = $carro->price;
+        $detalles->cantidad = $carro->quantity;
+        $detalles->total = \Cart::getTotal();
         $detalles->save();
+        return redirect()->back();
+        */
+    }
+
+    public function generar_detalle(Request $request)
+    {
+        $carro = \Cart::getContent();
+        $detalles = new Detalle;
+        foreach ($carro as $item)
+        {
+            $detalles->id_producto = $item->id;
+            $detalles->nombre = $item->name;
+            $detalles->precio = $item->price;
+            $detalles->cantidad = $item->quantity;
+            $detalles->total = \Cart::getTotal();
+        }
+        $detalles->save();
+
         return redirect()->back();
     }
 

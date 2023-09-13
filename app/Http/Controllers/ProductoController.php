@@ -39,6 +39,7 @@ class ProductoController extends Controller
         //$productos->shipping_cost = $request->input('shipping_cost');
         $productos->description = $request->input('descripcion');
         //$productos->category_id = $request->input('category');
+        $productos->stock_actual = $request->input('stock_actual');
         $productos->stock_minimo = $request->input('stock_minimo');
         $productos->stock_repo = $request->input('stock_repo');
         //$productos->brand_id = $request->input('brand_id');
@@ -76,6 +77,7 @@ class ProductoController extends Controller
         //$productos->shipping_cost = $request->input('shipping_cost');
         $productos->description = $request->input('descripcion');
         //$productos->category_id = $request->input('category');
+        $productos->stock_actual = $request->input('stock_actual');
         $productos->stock_minimo = $request->input('stock_minimo');
         $productos->stock_repo = $request->input('stock_repo');
         //$productos->brand_id = $request->input('brand_id');
