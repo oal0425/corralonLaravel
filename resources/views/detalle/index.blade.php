@@ -15,37 +15,33 @@
         <thead class="bg-dark text-white">
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">ID COMPROBANTE</th>
                 <th scope="col">ID PRODUCTO</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">PRECIO</th>
                 <th scope="col">CANTIDAD</th>
-                <th scope="col">ACCIONES</th>
-
+                <th scope="col">TOTAL</th>
             </tr>
         </thead>
         <tbody>
             @foreach($detalles as $detalle)
             <tr class="">
                 <td scope="row">{{$detalle->id}}</td>
-                <td>{{$detalle->Comprobante->id}}</td>
                 <td>{{$detalle->Producto->id}}</td>
+                <td>{{$detalle->nombre}}</td>
+                <td>{{$detalle->precio}}</td>
                 <td>{{$detalle->cantidad}}</td>
-
+                <td>{{$detalle->total}}</td>
                 <td>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$detalle->id}}">
-                        EDITAR
-                    </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$detalle->id}}">
-                        ELIMINAR
-                    </button>
+                    <a href="{{url('imprimir_detalle')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </td>
             </tr>
-            @include('detalle.info')
+
             @endforeach
         </tbody>
     </table>
 </div>
 
-@include('detalle.create')
+
 
 
 @endsection

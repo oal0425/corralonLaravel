@@ -7,6 +7,8 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
         NUEVO
     </button>
+    <a href="{{url('imprimir_producto')}}" class="btn btn-outline-primary"> Imprimir </a>
+    <a href="{{url('imprimir_producto_stock_minimo')}}" class="btn btn-outline-primary"> Imprimir Productos Stock Minimo </a>
 </div>
 
 <div class="table-responsive">
@@ -16,7 +18,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">NOMBRE</th>
-                <th scope="col">MARCA</th>
+                <th scope="col">DETALLES</th>
                 <th scope="col">FECHA VENCIMIENTO</th>
                 <th scope="col">FECHA ELABORACION</th>
                 <th scope="col">PRECIO</th>
@@ -32,11 +34,11 @@
             @foreach($productos as $producto)
             <tr class="">
                 <td scope="row">{{$producto->id}}</td>
-                <td>{{$producto->nombre}}</td>
-                <td>{{$producto->marca}}</td>
-                <td>{{$producto->fecha_vencimiento}}</td>
-                <td>{{$producto->fecha_elaboracion}}</td>
-                <td>{{$producto->precio}}</td>
+                <td>{{$producto->name}}</td>
+                <td>{{$producto->details}}</td>
+                <td>{{$producto->price}}</td>
+                <td>{{$producto->description}}</td>
+
                 <td>{{$producto->stock_actual}}</td>
                 <td>{{$producto->stock_minimo}}</td>
                 <td>{{$producto->stock_repo}}</td>
@@ -48,7 +50,7 @@
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$producto->id}}">
                         ELIMINAR
                     </button>
-                    <a href="{{url('imprimir_producto')}}" class="btn btn-outline-primary"> Imprimir </a>
+
                 </td>
             </tr>
             @include('producto.info')

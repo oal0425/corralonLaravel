@@ -2,18 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
 use App\Models\Cliente;
-use App\Models\Proveedor;
+use App\Models\Detalle;
 use App\Models\Producto;
+use App\Models\Proveedor;
 use App\Models\Comprobante;
+use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Response as FacadeResponse;
 
 class GeneradorController extends Controller
 {
 
+    public function obtener_productos_stock_minimo(){
+        $productos = Producto::where("stock_actual", "<", 50)->get();
+        return $productos;
+    }
+
+
+    public function imprimir_productos_stock_minimo()
+    {
+        $productos = $this->obtener_productos_stock_minimo();
+        if (!$productos){
+            return redirect()
+                    ->route("cart.index")
+                    ->with("mensaje", "No hay productos con stock minimo");
+        }
+        else{
+            $pdf = PDF::loadView('productos_stock_minimo',compact('productos'));
+            return $pdf->download('productos_stock_minimo.pdf');
+        }
+    }
 
     public function imprimir_cliente (){
         $clientes = Cliente::all();
@@ -33,11 +53,19 @@ class GeneradorController extends Controller
         return $pdf->download('productos_datos.pdf');
     }
 
-    public function imprimir_comprobante (){
-        $comprobantes = Comprobante::all();
-        $pdf = PDF::loadView('comprobantes_datos',compact('comprobantes'));
-        return $pdf->download('comprobantes_datos.pdf');
+    public function imprimir_detalle (){
+        $detalles = Detalle::all();
+        $pdf = PDF::loadView('detalle_factura',compact('detalles'));
+        return $pdf->download('detalle_factura.pdf');
     }
+
+    /*
+    public function imprimir_detalle ($id){
+        $detalles = Detalle::find($id);
+        $pdf = PDF::loadView('detalle_factura',compact('detalles'));
+        return $pdf->download('detalle_factura.pdf');
+    }
+    */
 
     /*Generar xml - como texto / revisar */
     public function generar_xml_cliente() {

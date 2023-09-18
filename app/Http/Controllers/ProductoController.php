@@ -32,14 +32,17 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $productos = new Producto;
-        $productos->nombre = $request->input('nombre');
-        $productos->marca = $request->input('marca');
-        $productos->fecha_vencimiento = $request->input('fecha_vencimiento');
-        $productos->fecha_elaboracion = $request->input('fecha_elaboracion');
-        $productos->precio = $request->input('precio');
+        $productos->name = $request->input('nombre');
+        //$productos->slug = $request->input('slug');
+        $productos->details = $request->input('detalles');
+        $productos->price = $request->input('precio');
+        //$productos->shipping_cost = $request->input('shipping_cost');
+        $productos->description = $request->input('descripcion');
+        //$productos->category_id = $request->input('category');
         $productos->stock_actual = $request->input('stock_actual');
         $productos->stock_minimo = $request->input('stock_minimo');
         $productos->stock_repo = $request->input('stock_repo');
+        //$productos->brand_id = $request->input('brand_id');
         $productos->id_proveedor = $request->input('id_proveedor');
         $productos->save();
         return redirect()->back();
@@ -67,14 +70,17 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $productos = Producto::find($id);
-        $productos->nombre = $request->input('nombre');
-        $productos->marca = $request->input('marca');
-        $productos->fecha_vencimiento = $request->input('fecha_vencimiento');
-        $productos->fecha_elaboracion = $request->input('fecha_elaboracion');
-        $productos->precio = $request->input('precio');
+        $productos->name = $request->input('nombre');
+        //$productos->slug = $request->input('slug');
+        $productos->details = $request->input('detalles');
+        $productos->price = $request->input('precio');
+        //$productos->shipping_cost = $request->input('shipping_cost');
+        $productos->description = $request->input('descripcion');
+        //$productos->category_id = $request->input('category');
         $productos->stock_actual = $request->input('stock_actual');
         $productos->stock_minimo = $request->input('stock_minimo');
         $productos->stock_repo = $request->input('stock_repo');
+        //$productos->brand_id = $request->input('brand_id');
         $productos->id_proveedor = $request->input('id_proveedor');
         $productos->save();
         return redirect()->back();
@@ -89,4 +95,6 @@ class ProductoController extends Controller
         $productos->delete();
         return redirect()->back();
     }
+
+    
 }

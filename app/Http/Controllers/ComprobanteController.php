@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\comprobante;
-use App\Models\Producto;
-use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Detalle;
+use App\Models\Producto;
+use App\Models\comprobante;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ComprobanteController extends Controller
 {
@@ -16,8 +18,8 @@ class ComprobanteController extends Controller
     {
         $comprobantes = Comprobante::all();
         $usuarios = User::all();
-        $productos = Producto::all();
-        return view('comprobante.index', compact('comprobantes','usuarios', 'productos'));
+        $detalles = Detalle::all();
+        return view('comprobante.index', compact('comprobantes','usuarios', 'detalles'));
     }
 
     /**
@@ -31,12 +33,12 @@ class ComprobanteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Detalle $detalle)
     {
         $comprobantes = new Comprobante;
-        $comprobantes->tipo = $request->input('tipo');
-        $comprobantes->fecha = $request->input('fecha');
-        $comprobantes->id_usuario = $request->input('id_usuario');
+        $comprobantes->id_usuario = auth()->id;
+        $comprobantes->id_detalle =$detalle->id;
+        $comprobantes->fecha = now();
         $comprobantes->save();
         return redirect()->back();
     }
