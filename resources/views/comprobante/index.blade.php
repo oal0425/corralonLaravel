@@ -7,6 +7,7 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
         NUEVO
     </button>
+    
 </div>
 
 <div class="table-responsive">
@@ -28,12 +29,6 @@
                 <td>{{$comprobantes->fecha}}</td>
                 <td>{{$comprobantes->Detalle->id}}</td>
                 <td>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$comprobantes->id}}">
-                        EDITAR
-                    </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$comprobantes->id}}">
-                        ELIMINAR
-                    </button>
                     <a href="{{url('imprimir_comprobante')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </td>
             </tr>

@@ -50,15 +50,21 @@ class DetalleController extends Controller
     public function generar_detalle(Request $request)
     {
         $carro = \Cart::getContent();
-        $detalles = new Detalle;
+        //$detalles = new Detalle;
         foreach ($carro as $item)
         {
+            $detalles = new Detalle;
             $detalles->id_producto = $item->id;
             $detalles->nombre = $item->name;
             $detalles->precio = $item->price;
             $detalles->cantidad = $item->quantity;
-            $detalles->total = \Cart::getTotal();
+            $detalles->total = $item->price * $item->quantity;
+            $detalles->id_usuario = auth()->id();
+            $detalles->fecha = now();
+            $detalles->save();
+
         }
+        $detalles->total_venta = \Cart::getTotal();
         $detalles->save();
 
         return redirect()->back();

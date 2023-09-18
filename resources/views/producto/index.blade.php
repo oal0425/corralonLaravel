@@ -7,6 +7,8 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
         NUEVO
     </button>
+    <a href="{{url('imprimir_producto')}}" class="btn btn-outline-primary"> Imprimir </a>
+    <a href="{{url('imprimir_producto_stock_minimo')}}" class="btn btn-outline-primary"> Imprimir Productos Stock Minimo </a>
 </div>
 
 <div class="table-responsive">
@@ -48,7 +50,7 @@
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$producto->id}}">
                         ELIMINAR
                     </button>
-                    <a href="{{url('imprimir_producto')}}" class="btn btn-outline-primary"> Imprimir </a>
+
                 </td>
             </tr>
             @include('producto.info')

@@ -38,6 +38,7 @@ return new class extends Migration
                   ->onDelete("cascade")
                   ->onUpdate("cascade");
             $table->timestamp('fecha');
+            $table->double('total_venta');
         });
     }
 

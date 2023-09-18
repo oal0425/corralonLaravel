@@ -92,7 +92,7 @@
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
             <div class="modal-body">
-                Estas seguro que quieres eliminar a <strong>{{$producto->nombre}}</strong>
+                Estas seguro que quieres eliminar a <strong>{{$producto->name}}</strong>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -100,74 +100,4 @@
             </div>
         </form>
       </div>
-    </div>  <!-- Modal CREATE -->
-    <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">AGREGAR PRODUCTO</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <form action="{{route('productos.store')}}" method="POST">
-              @csrf
-              <div class="modal-body">
-              <div class="mb-3">
-                  <label for="" class="form-label">NOMBRE</label>
-                  <input type="text"
-                  class="form-control" name="nombre" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-              <div class="mb-3">
-                  <label for="" class="form-label">DESCRIPCION</label>
-                  <input type="text"
-                  class="form-control" name="descripcion" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-              <div class="mb-3">
-                  <label for="" class="form-label">CODIGO BARRAS</label>
-                  <input type="text"
-                  class="form-control" name="codigobarras" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-              <div class="mb-3">
-                  <label for="" class="form-label"> PRECIO COSTO</label>
-                  <input type="text"
-                  class="form-control" name="preciocosto" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-              <div class="mb-3">
-                  <label for="" class="form-label"> PRECIO VENTA</label>
-                  <input type="text"
-                  class="form-control" name="precioventa" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-              <div class="mb-3">
-                  <label for="" class="form-label"> STOCK PRODUCTO</label>
-                  <input type="text"
-                  class="form-control" name="stockproducto" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-              <div class="mb-3">
-                  <label for="" class="form-label"> STOCK MINIMO</label>
-                  <input type="text"
-                  class="form-control" name="stockminimo" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-              <div class="mb-3">
-                  <label for="" class="form-label">Estado</label>
-                  <input type="text"
-                  class="form-control" name="estado" id="" aria-describedby="helpId" placeholder="">
-              </div>
-
-
-              </div>
-              <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Guardar</button>
-              </div>
-          </form>
-        </div>
-      </div>
     </div>
-
-  </div>

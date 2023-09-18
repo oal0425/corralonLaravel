@@ -32,12 +32,7 @@
                 <td>{{$detalle->cantidad}}</td>
                 <td>{{$detalle->total}}</td>
                 <td>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$detalle->id}}">
-                        EDITAR
-                    </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$detalle->id}}">
-                        ELIMINAR
-                    </button>
+                    <a href="{{url('imprimir_detalle')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </td>
             </tr>
 

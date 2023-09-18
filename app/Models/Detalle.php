@@ -10,7 +10,7 @@ class Detalle extends Model
     use HasFactory;
     protected $table = 'Detalles';
     protected $primarykey = 'id';
-    protected $fillable = ['id_producto', 'nombre', 'precio', 'cantidad', 'total', 'id_usuario', 'fecha'];
+    protected $fillable = ['id_producto', 'nombre', 'precio', 'cantidad', 'total', 'id_usuario', 'fecha','total_venta'];
     public $timestamps = false;
 
     /*
