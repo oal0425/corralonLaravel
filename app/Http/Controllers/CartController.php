@@ -49,6 +49,8 @@ class CartController extends Controller
                 'value' => $request->quantity
                 ),
         ));
+        $producto->stock_actual = $producto->stock_actual - $request->quantity;
+        $producto->save();
         return redirect()->route('cart.index')->with('success_msg', 'El carro se ha actualizado!');
         }
         else{
