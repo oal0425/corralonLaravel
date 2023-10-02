@@ -5,12 +5,13 @@ use App\Http\Controllers\CarroController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ComprobanteController;
 use App\Http\Controllers\DetalleController;
-use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\GeneradorController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,7 @@ Route::resource('carros', CarroController::class);
 Route::resource('clientes', ClienteController::class);
 Route::resource('comprobantes', ComprobanteController::class);
 Route::resource('detalles', DetalleController::class);
-Route::resource('productos', ProductoController::class);
+Route::resource('productos', ProductController::class);
 Route::resource('proveedores', ProveedorController::class);
 Route::resource('usuarios', UserController::class);
 Route::get('imprimir_cliente', [GeneradorController::class, 'imprimir_cliente']);
@@ -62,3 +63,9 @@ Route::get('/logout', [App\Http\Controllers\LogoutController::class,'logout'])->
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('products', ProductController::class);
+});

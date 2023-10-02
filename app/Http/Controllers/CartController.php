@@ -1,14 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 use Cart;
-use App\Models\Producto;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
     public function shop()
     {
-        $products = Producto::all();
+        $products = Product::all();
         //dd($products);
         return view('shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['products' => $products]);
     }
@@ -67,7 +67,7 @@ class CartController extends Controller
     }
 
     public function buscarProducto($id){
-        $producto = Producto::find($id);
+        $producto = Product::find($id);
         return $producto;
     }
 
