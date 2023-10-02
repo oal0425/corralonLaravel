@@ -7,7 +7,7 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
         NUEVO
     </button>
-    
+
 </div>
 
 <div class="table-responsive">
@@ -16,7 +16,7 @@
         <thead class="bg-dark text-white">
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">ID USUARIO</th>
+                <th scope="col">ID Cliente</th>
                 <th scope="col">FECHA</th>
                 <th scope="col">ID DETALLE</th>
             </tr>
@@ -25,7 +25,7 @@
             @foreach($comprobantes as $comprobante)
             <tr class="">
                 <td scope="row">{{$comprobantes->id}}</td>
-                <td>{{$comprobantes->id_usuario}}</td>
+                <td>{{$comprobantes->id_cliente}}</td>
                 <td>{{$comprobantes->fecha}}</td>
                 <td>{{$comprobantes->Detalle->id}}</td>
                 <td>

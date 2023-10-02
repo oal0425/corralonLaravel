@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Detalle;
 use App\Models\Product;
+use App\Models\Cliente;
 use App\Models\Comprobante;
 use Illuminate\Http\Request;
 
@@ -105,5 +106,11 @@ class DetalleController extends Controller
         $detalles = Detalle::find($id);
         $detalles->delete();
         return redirect()->back();
+    }
+
+    public function buscar_cliente($id)
+    {
+        return Cliente::find($id);
+
     }
 }

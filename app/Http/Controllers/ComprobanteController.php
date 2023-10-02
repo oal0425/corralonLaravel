@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\cliente;
 use App\Models\Detalle;
 use App\Models\Producto;
 use App\Models\comprobante;
@@ -17,9 +17,9 @@ class ComprobanteController extends Controller
     public function index()
     {
         $comprobantes = Comprobante::all();
-        $usuarios = User::all();
+        $clientes = cliente::all();
         $detalles = Detalle::all();
-        return view('comprobante.index', compact('comprobantes','usuarios', 'detalles'));
+        return view('comprobante.index', compact('comprobantes','clientes', 'detalles'));
     }
 
     /**
@@ -35,8 +35,9 @@ class ComprobanteController extends Controller
      */
     public function store(Detalle $detalle)
     {
+        $cliente = $detalle->buscarCliente($detalle->id_usuario);
         $comprobantes = new Comprobante;
-        $comprobantes->id_usuario = auth()->id;
+        $comprobantes->cliente = $cliente;
         $comprobantes->id_detalle =$detalle->id;
         $comprobantes->fecha = now();
         $comprobantes->save();
@@ -65,8 +66,7 @@ class ComprobanteController extends Controller
     public function update(Request $request, $id)
     {
         $comprobantes = Comprobante::find($id);
-        $comprobantes->tipo = $request->input('tipo');
-        $comprobantes->fecha = $request->input('fecha');
+        //$comprobantes->fecha = $request->input('fecha');
         $comprobantes->id_usuario = $request->input('id_usuario');
         $comprobantes->save();
         return redirect()->back();
@@ -77,8 +77,10 @@ class ComprobanteController extends Controller
      */
     public function destroy($id)
     {
+        /*
         $comprobantes = Comprobante::find($id);
         $comprobantes->delete();
         return redirect()->back();
+        */
     }
 }
