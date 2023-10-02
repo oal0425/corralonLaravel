@@ -41,7 +41,9 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view('products.create');
+        $products = Product::latest()->paginate(5);
+        $proveedores = Proveedor::all();
+        return view('products.create', compact('products','proveedores'));
     }
 
     /**
