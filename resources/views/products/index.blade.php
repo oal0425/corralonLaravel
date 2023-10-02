@@ -25,7 +25,11 @@
             <th>No</th>
             <th>Name</th>
             <th>Details</th>
+<<<<<<< HEAD
             <th>Precio</th>
+=======
+            <th>Precio/th>
+>>>>>>> 9366c2f015f5b2f6ce45d71da340d364ef592219
             <th>Descripcion</th>
             <th>Stock Actual</th>
             <th>Stock Minimo </th>
