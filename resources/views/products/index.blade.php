@@ -25,6 +25,13 @@
             <th>No</th>
             <th>Name</th>
             <th>Details</th>
+            <th>Precio/th>
+            <th>Descripcion</th>
+            <th>Stock Actual</th>
+            <th>Stock Minimo </th>
+            <th>Stock Repo</th>
+            <th>Proveedor</th>
+
             <th width="280px">Action</th>
         </tr>
 	    @foreach ($products as $product)
@@ -32,6 +39,12 @@
 	        <td>{{ ++$i }}</td>
 	        <td>{{ $product->name }}</td>
 	        <td>{{ $product->detail }}</td>
+            <td>{{ $product->price }}</td>
+            <td>{{ $product->description }}</td>
+            <td>{{ $product->stock_actual }}</td>
+            <td>{{ $product->stock_minimo }}</td>
+            <td>{{ $product->stock_repo }}</td>
+            <td>{{ $product->proveedor }}</td>
 	        <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
@@ -52,5 +65,5 @@
 
     {!! $products->links() !!}
 
-<p class="text-center text-primary"><small>Tutorial by LaravelTuts.com</small></p>
+
 @endsection

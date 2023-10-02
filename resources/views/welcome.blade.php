@@ -65,7 +65,7 @@
                       </li>
 
                       <li class="nav-item">
-                        <a class="nav-link" href="{{url ('shop')}}">Comprar</a>
+                        <a class="nav-link" href="{{url ('shop')}}">VENDER</a>
                     </li>
 
                   </ul>
