@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detalle;
-use App\Models\Producto;
+use App\Models\Product;
 use App\Models\Comprobante;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class DetalleController extends Controller
     public function index()
     {
         $detalles = Detalle::all();
-        $productos = Producto::all();
+        $productos = Product::all();
         $comprobantes = Comprobante::all();
         return view('detalle.index', compact('detalles','productos','comprobantes'));
 

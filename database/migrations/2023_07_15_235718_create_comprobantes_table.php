@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('comprobantes', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('id_usuario');
-            $table->foreign('id_usuario')
+            $table->unsignedBigInteger('id_cliente');
+            $table->foreign('id_cliente')
                   ->references('id')
-                  ->on('users')
+                  ->on('clientes')
                   ->onDelete("cascade")
                   ->onUpdate("cascade");
 
