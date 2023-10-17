@@ -64,11 +64,10 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Proveedor</strong>
-                {{ $product->proveedor }}
+                {{ $product->proveedor->razon_social }}
             </div>
         </div>
 
 
     </div>
 @endsection
-<p class="text-center text-primary"><small>Tutorial by LaravelTuts.com</small></p>

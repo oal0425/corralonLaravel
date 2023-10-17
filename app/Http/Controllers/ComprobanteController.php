@@ -17,9 +17,8 @@ class ComprobanteController extends Controller
     public function index()
     {
         $comprobantes = Comprobante::all();
-        $clientes = cliente::all();
         $detalles = Detalle::all();
-        return view('comprobante.index', compact('comprobantes','clientes', 'detalles'));
+        return view('comprobante.index', compact('comprobantes', 'detalles'));
     }
 
     /**
@@ -33,13 +32,12 @@ class ComprobanteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Detalle $detalle)
+    static public function store(Detalle $detalle)
     {
-        $cliente = $detalle->buscarCliente($detalle->id_usuario);
         $comprobantes = new Comprobante;
-        $comprobantes->cliente = $cliente;
         $comprobantes->id_detalle =$detalle->id;
-        $comprobantes->fecha = now();
+        $comprobantes->total->$detalle->total_venta;
+        $comprobantes->fecha = $detalle->fecha;
         $comprobantes->save();
         return redirect()->back();
     }
@@ -65,11 +63,13 @@ class ComprobanteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /*
         $comprobantes = Comprobante::find($id);
         //$comprobantes->fecha = $request->input('fecha');
         $comprobantes->id_usuario = $request->input('id_usuario');
         $comprobantes->save();
         return redirect()->back();
+        */
     }
 
     /**

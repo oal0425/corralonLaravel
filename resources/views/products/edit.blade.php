@@ -31,43 +31,43 @@
                 <div class="mb-3">
                     <label for="" class="form-label">NOMBRE</label>
                     <input type="text"
-                    class="form-control" name="nombre" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="name" id="" aria-describedby="helpId" placeholder="" value="{{$product->name}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="" class="form-label">Detalles</label>
                     <input type="text"
-                    class="form-control" name="detalles" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="details" id="" aria-describedby="helpId" placeholder="" value="{{$product->details}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="" class="form-label"> PRECIO</label>
                     <input type="text"
-                    class="form-control" name="precio" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="price" id="" aria-describedby="helpId" placeholder="" value="{{$product->price}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="" class="form-label"> Descripcion</label>
                     <input type="text"
-                    class="form-control" name="descripcion" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="description" id="" aria-describedby="helpId" placeholder="" value="{{$product->description}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="" class="form-label"> STOCK ACTUAL</label>
                     <input type="text"
-                    class="form-control" name="stock_actual" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="stock_actual" id="" aria-describedby="helpId" placeholder="" value="{{$product->stock_actual}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="" class="form-label"> STOCK MINIMO</label>
                     <input type="text"
-                    class="form-control" name="stock_minimo" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="stock_minimo" id="" aria-describedby="helpId" placeholder="" value="{{$product->stock_minimo}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="" class="form-label"> STOCK REPOSICION</label>
                     <input type="text"
-                    class="form-control" name="stock_repo" id="" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="stock_repo" id="" aria-describedby="helpId" placeholder="" value="{{$product->stock_repo}}">
                 </div>
 
                 <div class="mb-3">
@@ -80,7 +80,11 @@
                 </div>
             </div>
 		</div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+    </div>
     </form>
 
-<p class="text-center text-primary"><small>Tutorial by LaravelTuts.com</small></p>
+
 @endsection

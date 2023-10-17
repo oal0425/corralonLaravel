@@ -13,11 +13,6 @@ class Detalle extends Model
     protected $fillable = ['id_producto', 'nombre', 'precio', 'cantidad', 'total', 'id_usuario', 'fecha','total_venta'];
     public $timestamps = false;
 
-    /*
-    public function Comprobante(){
-        return $this->hasOne(Comprobante::class, 'id', 'id_comprobante');
-    }
-    */
 
     public function Producto(){
         return $this->hasOne(Producto::class, 'id', 'id_producto');

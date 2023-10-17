@@ -54,9 +54,7 @@
                       <li class="nav-item">
                           <a class="nav-link" href="{{url ('productos')}}">PRODUCTOS</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{url ('carros')}}">CARROS</a>
-                      </li>
+
                       <li class="nav-item">
                           <a class="nav-link" href="{{url ('detalles')}}#">DETALLES</a>
                       </li>
