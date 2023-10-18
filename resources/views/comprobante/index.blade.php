@@ -3,10 +3,8 @@
 @section ('content')
 
 <div>
-    <br>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
-        NUEVO
-    </button>
+
+    <a href="{{url('imprimir_comprobantes')}}" class="btn btn-outline-primary"> Imprimir Comprobantes</a>
 
 </div>
 
@@ -29,7 +27,8 @@
                 <td>{{$comprobante->total}}</td>
                 <td>{{$comprobante->fecha}}</td>
                 <td>
-                    <a href="{{url('imprimir_comprobante')}}" class="btn btn-outline-primary"> Imprimir </a>
+                    <a href="{{url('imprimir_comprobante',['idcomprobante' => $comprobante->id])}}" class="btn btn-outline-primary"> Imprimir Comprobante</a>
+
                 </td>
             </tr>
 

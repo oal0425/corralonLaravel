@@ -50,6 +50,10 @@ Route::get('generar_xml_comprobante', [GeneradorController::class, 'generar_xml_
 Route::get('/generar_detalle', [DetalleController::class, 'generar_detalle',])->name('generar_detalle');
 Route::get('detalle', [DetalleController::class, 'detalle'])->name('detalle.index');
 
+Route::get('imprimir_comprobantes', [GeneradorController::class, 'imprimir_comprobantes']);
+Route::get('imprimir_comprobante/{idcomprobante}',[GeneradorController::class, 'imprimir_comprobante']);
+
+
 Route::get('/shop', [CartController::class, 'shop'])->name('shop');
 Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
 Route::post('/add', [CartController::class, 'add'])->name('cart.store');

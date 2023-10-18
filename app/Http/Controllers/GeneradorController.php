@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Detalle;
-use App\Models\Producto;
+use App\Models\Product;
 use App\Models\Proveedor;
 use App\Models\Comprobante;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class GeneradorController extends Controller
 {
 
     public function obtener_productos_stock_minimo(){
-        $productos = Producto::where("stock_actual", "<", 50)->get();
+        $productos = Product::where("stock_actual", "<", 50)->get();
         return $productos;
     }
 
@@ -48,7 +48,7 @@ class GeneradorController extends Controller
     }
 
     public function imprimir_producto (){
-        $productos = Producto::all();
+        $productos = Product::all();
         $pdf = PDF::loadView('productos_datos',compact('productos'));
         return $pdf->download('productos_datos.pdf');
     }
@@ -109,7 +109,7 @@ class GeneradorController extends Controller
 
     public function generar_xml_producto(){
         libxml_use_internal_errors(true);
-        $productos = Producto::all();
+        $productos = Product::all();
         $nombre_archivo = 'productos_xml.xml';
         $xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?> \n <Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.008.001.02\">" .$productos;
         $productos_array = json_decode($productos,true);
@@ -134,6 +134,18 @@ class GeneradorController extends Controller
         $response->header('Content-Disposition', 'attachment;filename = '. $nombre_archivo . '');
         $response->header('Content-Transfer-Encoding', 'binary');
         return $response;
+    }
+
+    public function imprimir_comprobantes(){
+        $comprobantes = Comprobante::all();
+        $pdf = PDF::loadView('comprobante_datos',compact('comprobantes'));
+        return $pdf->download('comprobante_datos.pdf');
+    }
+
+    public function imprimir_comprobante($id){
+        $comprobante = Comprobante::find($id);
+        $pdf = PDF::loadView('comprobante_factura',compact('comprobante'));
+        return $pdf->download('comprobante_factura.pdf');
     }
 
 
