@@ -8,6 +8,7 @@ use App\Models\Producto;
 use App\Models\comprobante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\Cast\Double;
 
 class ComprobanteController extends Controller
 {
@@ -32,11 +33,11 @@ class ComprobanteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    static public function store(Detalle $detalle)
+    static public function store(Detalle $detalle, float $total)
     {
         $comprobantes = new Comprobante;
         $comprobantes->id_detalle =$detalle->id;
-        $comprobantes->total->$detalle->total_venta;
+        $comprobantes->total=$total;
         $comprobantes->fecha = $detalle->fecha;
         $comprobantes->save();
         return redirect()->back();

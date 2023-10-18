@@ -10,12 +10,12 @@ class Detalle extends Model
     use HasFactory;
     protected $table = 'Detalles';
     protected $primarykey = 'id';
-    protected $fillable = ['id_producto', 'nombre', 'precio', 'cantidad', 'total', 'id_usuario', 'fecha','total_venta'];
+    protected $fillable = ['id_producto', 'nombre', 'precio', 'cantidad', 'total', 'id_usuario', 'fecha'];
     public $timestamps = false;
 
 
     public function Producto(){
-        return $this->hasOne(Producto::class, 'id', 'id_producto');
+        return $this->hasOne(Product::class, 'id', 'id_producto');
     }
 
     public function Usuario(){

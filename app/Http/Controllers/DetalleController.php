@@ -62,14 +62,12 @@ class DetalleController extends Controller
             $detalles->total = $item->price * $item->quantity;
             $detalles->id_usuario = auth()->id();
             $detalles->fecha = now();
-            $detalles->total_venta = 0;
             $detalles->save();
-
         }
-        $detalles->total_venta = \Cart::getTotal();
+        $total_venta = \Cart::getTotal();
         $detalles->save();
         //$comprobante->store($detalles);
-        $comprobante = ComprobanteController::store($detalles);
+        $comprobante = ComprobanteController::store($detalles,$total_venta);
 
         return redirect()->back();
     }

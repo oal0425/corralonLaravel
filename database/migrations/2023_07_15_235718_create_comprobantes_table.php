@@ -19,7 +19,7 @@ return new class extends Migration
                   ->on('detalles')
                   ->onDelete("cascade")
                   ->onUpdate("cascade");
-            $table->double('total');
+            $table->float('total');
             $table->timestamp('fecha');
         });
     }
