@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Detalle;
 use App\Models\Product;
+use App\Models\Cliente;
 use App\Models\Comprobante;
 use Illuminate\Http\Request;
 
@@ -50,7 +51,7 @@ class DetalleController extends Controller
     public function generar_detalle(Request $request)
     {
         $carro = \Cart::getContent();
-        //$detalles = new Detalle;
+        $comprobante = new Comprobante();
         foreach ($carro as $item)
         {
             $detalles = new Detalle;
@@ -62,10 +63,11 @@ class DetalleController extends Controller
             $detalles->id_usuario = auth()->id();
             $detalles->fecha = now();
             $detalles->save();
-
         }
-        $detalles->total_venta = \Cart::getTotal();
+        $total_venta = \Cart::getTotal();
         $detalles->save();
+        //$comprobante->store($detalles);
+        $comprobante = ComprobanteController::store($detalles,$total_venta);
 
         return redirect()->back();
     }
@@ -105,5 +107,11 @@ class DetalleController extends Controller
         $detalles = Detalle::find($id);
         $detalles->delete();
         return redirect()->back();
+    }
+
+    public function buscar_cliente($id)
+    {
+        return Cliente::find($id);
+
     }
 }

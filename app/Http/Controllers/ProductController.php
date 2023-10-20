@@ -41,7 +41,8 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view('products.create');
+        $proveedores = Proveedor::all();
+        return view('products.create', compact('proveedores'));
     }
 
     /**
@@ -88,7 +89,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product): View
     {
-        return view('products.edit',compact('product'));
+        $proveedores = Proveedor::all();
+        return view('products.edit',compact('product','proveedores'));
     }
 
     /**
