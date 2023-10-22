@@ -13,14 +13,6 @@ return new class extends Migration
     {
         Schema::create('detalles', function (Blueprint $table) {
             $table->id();
-
-            /*
-            $table->foreign('id_comprobante')
-                  ->references('id')
-                  ->on('comprobantes')
-                  ->onDelete("cascade")
-                  ->onUpdate("cascade");
-            */
             $table->unsignedBigInteger('id_producto');
             $table->foreign('id_producto')
                   ->references('id')
