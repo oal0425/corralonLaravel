@@ -10,15 +10,19 @@ use Illuminate\Http\Request;
 
 class DetalleController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $detalles = Detalle::all();
-        $productos = Product::all();
-        $comprobantes = Comprobante::all();
-        return view('detalle.index', compact('detalles','productos','comprobantes'));
+        $detalles1 = [];
+        foreach ($detalles as $detalle){
+            $detalle->productos = json_decode($detalle->productos);
+            array_push($detalles1,$detalle);
+        }
+        return view('detalle.index', compact('detalles1'));
 
     }
 
@@ -52,18 +56,22 @@ class DetalleController extends Controller
     {
         $carro = \Cart::getContent();
         $comprobante = new Comprobante();
+        $array_productos = [];
         foreach ($carro as $item)
         {
-            $detalles = new Detalle;
-            $detalles->id_producto = $item->id;
-            $detalles->nombre = $item->name;
-            $detalles->precio = $item->price;
-            $detalles->cantidad = $item->quantity;
-            $detalles->total = $item->price * $item->quantity;
-            $detalles->id_usuario = auth()->id();
-            $detalles->fecha = now();
-            $detalles->save();
+            $array = array(
+                "id_producto" => $item->id,
+                "name" => $item->name,
+                "price" => $item->price,
+                "quantity" => $item->quantity,
+                "total" => $item->price * $item->quantity,
+            );
+            array_push($array_productos, $array);
         }
+        $detalles = new Detalle;
+        $detalles->productos = json_encode($array_productos);
+        $detalles->id_usuario = auth()->id();
+        $detalles->fecha = now();
         $total_venta = \Cart::getTotal();
         $detalles->save();
         //$comprobante->store($detalles);
@@ -113,5 +121,10 @@ class DetalleController extends Controller
     {
         return Cliente::find($id);
 
+    }
+
+    public function decodificar_productos(Detalle $detalle)
+    {
+        return $detalle->productos = json_decode($detalle->producto);
     }
 }

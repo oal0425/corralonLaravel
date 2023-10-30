@@ -10,8 +10,9 @@ class Detalle extends Model
     use HasFactory;
     protected $table = 'Detalles';
     protected $primarykey = 'id';
-    protected $fillable = ['id_producto', 'nombre', 'precio', 'cantidad', 'total', 'id_usuario', 'fecha'];
+    protected $fillable = ['productos', 'id_usuario', 'fecha'];
     public $timestamps = false;
+    //'id_producto', 'nombre', 'precio', 'cantidad', 'total'
 
 
     public function Producto(){
@@ -21,4 +22,6 @@ class Detalle extends Model
     public function Usuario(){
         return $this->hasOne(Usuario::class, 'id', 'id_usuario');
     }
+
+
 }
