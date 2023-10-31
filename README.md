@@ -21,46 +21,59 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Cómo comenzar:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. Clonar el repositorio e ir a la consola y colocar el siguiente comando:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+    composer install
+```
 
-## Laravel Sponsors
+2. Cuando se termine de descargar el archivo requirements.txt, entonces ingresaremos a la carpeta con este comando:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+     php artisan key:generate
+```
 
-### Premium Partners
+3. MIGRACIONES
+```
+     php artisan migrate
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. Ejecutamos el siguiente codigo para hacer funcionar el "sembrador"
+```
+php artisan db:seed --class=PermissionTableSeeder
+```
+4. Creamos la semilla para el usuario Admin
+   ```
+   php artisan db:seed --class=CreateAdminUserSeeder
+   ```
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Ejecutamos los siguientes comandos
+```
+   php artisan make:seed ProductsTableSeeder
+```
+   
+6. Ejecutamos los siguientes comandos
+```
+npm install
+```
+6. Ejecutamos los siguientes comandos
+```
+npm run build
+```   
 
-## Code of Conduct
+9. Ahora, ejecutaremos el proyecto Laravel con el siguiente comando:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+    php artisan serve
+```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. Listo, ya podes revisar todo lo que esta implementado en el programa. Se debe abrir el navegador y escribir la siguiente direccion URL para ingresar a la App.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+http://127.0.0.1:8000/
+```
