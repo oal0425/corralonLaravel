@@ -1,11 +1,19 @@
-@extends('welcome')
-
+@extends('layouts.app')
 @section ('content')
+
+<div class="row">
+    <div class="col-lg-12 margin-tb">
+        <div class="pull-left">
+            <h2>Clientes</h2>
+        </div>
+      
+    </div>
+</div>
 
 <div>
     <br>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
-        NUEVO
+        Nuevo Cliente
     </button>
 
     <a href="{{url('imprimir_cliente')}}" class="btn btn-outline-primary"> Imprimir </a>

@@ -1,6 +1,7 @@
-@extends('welcome')
-
+@extends('layouts.initial')
 @section ('content')
+
+<h5>Detalles</h5>
 
 <div>
     <br>

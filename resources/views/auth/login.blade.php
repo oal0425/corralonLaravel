@@ -34,7 +34,7 @@
 
                       <form action="{{route ('login')}}" method = 'POST'>
                         @csrf
-                        <p>Ingresa tu correo y contrasenia</p>
+                        <p>Ingresa tu correo y contraseña</p>
 
                         <div class="form-outline mb-4">
                           <input type="email" id="form2Example11" name="email" class="form-control"
@@ -50,7 +50,7 @@
 
                         <div class="text-center pt-1 mb-5 pb-1">
                           <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Ingresar </button>
-                          <a class="text-muted" href="#!">Olvidaste tu pass?</a>
+                          <a class="text-muted" href="#!">Olvidaste tu contraseña?</a>
                         </div>
 
                         <div class="d-flex align-items-center justify-content-center pb-4">

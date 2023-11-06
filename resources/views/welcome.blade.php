@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>Title</title>
+        <title>Corralon Cortez</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,35 +10,38 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+
+
+
+          <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+
       </head>
 
 
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-
-
-                    @endauth
-                </div>
-            @endif
-
+    <body >
+        
 
             <header>
 
-
-
                 <!--
+                    "navbar navbar-expand-md navbar-light bg-white shadow-sm"
                 NAVBAR, DONDE SALEN LOS LINK QUE NOS LLEVAN A LAS DIFERENTES SECCIONES
                 -->
-              <nav class="navbar navbar-expand navbar-dark bg-dark">
+              <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                   <ul class="nav navbar-nav">
-                      <li class="nav-item">
-                          <a class="nav-link active" href="{{'/'}}" aria-current="page">COMERCIO <span class="visually-hidden">(current)</span></a>
-                      </li>
+                      
+                      <a class="navbar-brand" href="{{ url('/') }}">
+                    CORRALON CORTEZ
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
 
 
                       <li class="nav-item">
@@ -62,7 +65,7 @@
                   </ul>
 
                   <div>
-                    <a href="{{route('login')}}" class="btn btn-outline-primary">LOGIN</a>
+                    <a href="{{route('login')}}" class="btn btn-outline-primary">Login</a>
                     <a href="{{ url('/roles') }}" class="btn btn-outline-primary">Roles</a>
                 </div>
 

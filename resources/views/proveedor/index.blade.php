@@ -1,6 +1,8 @@
-@extends('welcome')
+@extends('layouts.initial')
 
 @section ('content')
+
+<h5>Proveedores</h5>
 
 <div>
     <br>
