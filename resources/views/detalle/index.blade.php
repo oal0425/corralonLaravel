@@ -23,14 +23,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($detalles as $detalle)
+            @foreach($detalles1 as $detalle)
             <tr class="">
                 <td scope="row">{{$detalle->id}}</td>
-                <td>{{$detalle->Producto->id}}</td>
-                <td>{{$detalle->nombre}}</td>
-                <td>{{$detalle->precio}}</td>
-                <td>{{$detalle->cantidad}}</td>
-                <td>{{$detalle->total}}</td>
+                @foreach ($detalle->productos as $producto )
+                    <td> {{ $producto->id_producto }} </td>
+                    <td> {{ $producto->name }} </td>
+                    <td> {{ $producto->price }} </td>
+                    <td> {{ $producto->quantity }} </td>
+                    <td> {{ $producto->total }} </td>
+                @endforeach
+
                 <td>
                     <a href="{{url('imprimir_detalle')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </td>

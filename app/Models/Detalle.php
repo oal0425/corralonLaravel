@@ -10,20 +10,18 @@ class Detalle extends Model
     use HasFactory;
     protected $table = 'Detalles';
     protected $primarykey = 'id';
-    protected $fillable = ['id_producto', 'nombre', 'precio', 'cantidad', 'total', 'id_usuario', 'fecha','total_venta'];
+    protected $fillable = ['productos', 'id_usuario', 'fecha'];
     public $timestamps = false;
+    //'id_producto', 'nombre', 'precio', 'cantidad', 'total'
 
-    /*
-    public function Comprobante(){
-        return $this->hasOne(Comprobante::class, 'id', 'id_comprobante');
-    }
-    */
 
     public function Producto(){
-        return $this->hasOne(Producto::class, 'id', 'id_producto');
+        return $this->hasOne(Product::class, 'id', 'id_producto');
     }
 
     public function Usuario(){
         return $this->hasOne(Usuario::class, 'id', 'id_usuario');
     }
+
+
 }

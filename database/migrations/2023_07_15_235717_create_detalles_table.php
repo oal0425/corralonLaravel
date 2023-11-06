@@ -13,24 +13,7 @@ return new class extends Migration
     {
         Schema::create('detalles', function (Blueprint $table) {
             $table->id();
-
-            /*
-            $table->foreign('id_comprobante')
-                  ->references('id')
-                  ->on('comprobantes')
-                  ->onDelete("cascade")
-                  ->onUpdate("cascade");
-            */
-            $table->unsignedBigInteger('id_producto');
-            $table->foreign('id_producto')
-                  ->references('id')
-                  ->on('products')
-                  ->onDelete("cascade")
-                  ->onUpdate("cascade");
-            $table->string('nombre');
-            $table->double('precio');
-            $table->integer('cantidad');
-            $table->double('total');
+            $table->string('productos');
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')
                   ->references('id')
@@ -38,7 +21,7 @@ return new class extends Migration
                   ->onDelete("cascade")
                   ->onUpdate("cascade");
             $table->timestamp('fecha');
-            $table->double('total_venta');
+
         });
     }
 
