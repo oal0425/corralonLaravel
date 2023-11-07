@@ -45,9 +45,6 @@
 
 
                       <li class="nav-item">
-                          <a class="nav-link" href="{{url ('proveedores')}}">PROVEEDORES</a>
-                      </li>
-                      <li class="nav-item">
                           <a class="nav-link" href="{{url ('productos')}}">PRODUCTOS</a>
                       </li>
 
@@ -64,6 +61,8 @@
 
                   </ul>
 
+
+
                   <div>
                     <a href="{{route('login')}}" class="btn btn-outline-primary">Login</a>
                     <a href="{{ url('/roles') }}" class="btn btn-outline-primary">Roles</a>
@@ -74,6 +73,7 @@
 
               </header>
 
+             
               <main class="conteiner">
                 <div class="row">
                     <div class="col-md-2 "></div>

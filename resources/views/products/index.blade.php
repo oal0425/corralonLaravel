@@ -22,9 +22,9 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Detalles</th>
             <th>Precio</th>
             <th>Descripcion</th>
             <th>Stock Actual</th>
