@@ -8,7 +8,7 @@
             </div>
             <div class="pull-right">
                 @can('product-create')
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Nuevo Producto</a>
+                <a class="btn btn-success" href="{{ route('products.create') }}">Nuevo Producto</a>
                 @endcan
             </div>
         </div>
@@ -19,7 +19,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
+</br>
     <table class="table table-bordered">
         <tr>
             <th>Id</th>

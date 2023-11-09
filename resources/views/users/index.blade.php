@@ -7,10 +7,12 @@
             <h2>Usuarios</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('users.create') }}"> Nuevo Usuario</a>
+            <a class="btn btn-success" href="{{ route('users.create') }}">Nuevo Usuario</a>
         </div>
     </div>
 </div>
+
+</br>
 
 @if ($message = Session::get('success'))
     <div class="alert alert-success">

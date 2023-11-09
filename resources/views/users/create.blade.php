@@ -14,7 +14,7 @@
 
 @if (count($errors) > 0)
   <div class="alert alert-danger">
-    <strong>Ups!</strong> Error de validación<br><br>
+    <strong>Ups!</strong> Error de validación.<br><br>
     <ul>
        @foreach ($errors->all() as $error)
          <li>{{ $error }}</li>
@@ -27,8 +27,8 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Nombre:</strong>
-            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+            <strong>Usuario:</strong>
+            {!! Form::text('name', null, array('placeholder' => 'Usuario','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -40,13 +40,13 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Contraseña:</strong>
-            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
+            {!! Form::password('password', array('placeholder' => 'Contraseña','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Confirmar Contraseña:</strong>
-            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
+            {!! Form::password('confirm-password', array('placeholder' => 'Confirmar Contraseña','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">

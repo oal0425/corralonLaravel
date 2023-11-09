@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> MOSTRAR PRODUCTO</h2>
+                <h2>Producto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('products.index') }}">Volver</a>
             </div>
         </div>
     </div>
@@ -15,13 +15,13 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
+                <strong>Nombre:</strong>
                 {{ $product->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Details:</strong>
+                <strong>Detalles:</strong>
                 {{ $product->detail }}
             </div>
         </div>
@@ -35,7 +35,7 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Descripcion:</strong>
+                <strong>Descripción:</strong>
                 {{ $product->description }}
             </div>
         </div>
@@ -49,14 +49,14 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Stock Minimo</strong>
+                <strong>Stock Mínimo</strong>
                 {{ $product->stock_minimo }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Stock Reposicion</strong>
+                <strong>Stock Reposición</strong>
                 {{ $product->stock_repo }}
             </div>
         </div>
