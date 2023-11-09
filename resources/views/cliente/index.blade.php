@@ -26,13 +26,13 @@
     <table class="table">
         <thead class="bg-dark text-white">
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">NOMBRE</th>
-                <th scope="col">APELLIDO</th>
-                <th scope="col">TELEFONO</th>
-                <th scope="col">DOMICILIO</th>
-                <th scope="col">LOCALIDAD</th>
-                <th scope="col">ID_USUARIO</th>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Domicilio</th>
+                <th scope="col">Localidad</th>
+                <th scope="col">Id_Usuario</th>
 
             </tr>
         </thead>
@@ -50,10 +50,10 @@
 
                 <td>
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$cliente->id}}">
-                        EDITAR
+                        Editar
                     </button>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$cliente->id}}">
-                        ELIMINAR
+                        Eliminar
                     </button>
 
                 </td>
