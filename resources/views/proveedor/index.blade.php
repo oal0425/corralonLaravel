@@ -8,6 +8,8 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
         Nuevo Proveedor
     </button>
+
+    <a href="{{url('imprimir_proveedor')}}" class="btn btn-outline-primary" > Imprimir </a>
 </div>
 
 <div class="table-responsive">
@@ -40,7 +42,6 @@
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$proveedor->id}}">
                         Eliminar
                     </button>
-                    <a href="{{url('imprimir_proveedor')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </td>
             </tr>
             @include('proveedor.info')

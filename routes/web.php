@@ -25,7 +25,7 @@ use App\Http\Controllers\RoleController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 Route::resource('carros', CarroController::class);
