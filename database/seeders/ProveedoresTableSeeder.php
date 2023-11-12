@@ -14,7 +14,7 @@ class ProveedoresTableSeeder extends Seeder
     public function run(): void
     {
         Proveedor::create([
-            'cuit' => '30501111127',
+            'id' => '30501111127',
             'razon_social' =>'Holcim',
             'domicilio_proveedor' => 'HUMBERTO PRIMO 680',
             'telefono_proveedor' =>'',
@@ -22,7 +22,7 @@ class ProveedoresTableSeeder extends Seeder
         ]);
 
         Proveedor::create([
-            'cuit' => '30709640492',
+            'id' => '30709640492',
             'razon_social' =>'HIMETAL S.A',
             'domicilio_proveedor' => 'SALTA',
             'telefono_proveedor' =>'',

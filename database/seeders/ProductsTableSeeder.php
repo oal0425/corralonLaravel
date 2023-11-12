@@ -21,7 +21,7 @@ class ProductsTableSeeder extends Seeder
             'stock_actual'=>150,
             'stock_minimo'=>50,
             'stock_repo'=>30,
-            'id_proveedor' => 1,
+            'id_proveedor' => 30501111127,
             'image_path' => 'cemento.png'
         ]);
 
@@ -33,7 +33,7 @@ class ProductsTableSeeder extends Seeder
             'stock_actual'=>250,
             'stock_minimo'=>50,
             'stock_repo'=>30,
-            'id_proveedor' => 1,
+            'id_proveedor' => 30501111127,
             'image_path' => 'cemento.png'
         ]);
 
@@ -45,7 +45,7 @@ class ProductsTableSeeder extends Seeder
             'stock_actual'=>350,
             'stock_minimo'=>40,
             'stock_repo'=>20,
-            'id_proveedor' => 1,
+            'id_proveedor' => 30501111127,
             'image_path' => 'cemento.png'
         ]);
     }
