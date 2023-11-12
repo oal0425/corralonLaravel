@@ -3,7 +3,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">AGREGAR CLIENTE</h5>
+          <h5 class="modal-title" id="exampleModalLabel">AGREGAR PROVEEDOR</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="{{route('proveedores.store')}}" method="POST">
@@ -50,10 +50,10 @@
       </div>
     </div>
   </div>
- 
- 
- 
- 
- 
- 
-  
+
+
+
+
+
+
+
