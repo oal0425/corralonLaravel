@@ -78,6 +78,7 @@
 <h1>BIENVENIDOS A CORRALON CORTEZ</h1>
 </div>
 </br>
+</br>
 <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -111,11 +112,63 @@
 </div>
 </div>
 </br>
+</br>
 <div class="text-center">
 <h2>Sobre Nosotros</h2>
 </div>
+<div class="container p-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <p class="text-justify">
+                Disensa es una sólida empresa Ecuatoriana, líder en el mercado de distribución de ventas de materiales para la construcción desde 1973. Contamos con la experiencia en el desarrollo de soluciones para el mercado de la construcción, 
+                siempre ofreciendo los productos de calidad garantizada y el mejor servicio.
+                Disensa posee el primer sistema de franquicia de materiales de construcción a nivel mundial.
+                En 1973 Disensa es una tienda independiente de materiales y herramientas para construcción y ferreterías en Ecuador. 
+                1978 Disensa comienza en Ecuador como un distribuidor independiente, y a medida que pasaron los años creciendo hasta convertirse
+                en una red de franquicias también en varios paises de latinoamérica
+                y en 2021 el Corralón Cortez es fundado como una franquicia de Disensa
+            
+            </p>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+<h2>Misión</h2>
+</div>
+    <div class="row justify-content-center p-5 text-center">
+        <div class="col-md-8">
+            <p class="text-justify">
+            El corralón Cortez comparte la misión de Disensa de proveer soluciones para las necesidades de la construcción y/o mejoramiento del hogar, a través de un servicio confiable, oferta completa de productos y una experiencia de compra diferenciada.
+            
+            </p>
+        </div>
+    </div>
+<div class="text-center">
+<h2>Visión</h2>
+</div>
+    <div class="row justify-content-center p-5 text-center">
+        <div class="col-md-8">
+            <p class="text-justify">
+            Ser la red de tiendas de materiales de construcción y mejoramiento del hogar, con mayor presencia en Latinoamérica.
+            </p>
+        </div>
+    </div>
+<div class="text-center">
+<h2>Objetivos</h2>
+</div>
+    <div class="row justify-content-center p-5 text-center">
+        <div class="col-md-8">
+            <p class="text-justify">
+          	Siempre priorizar a salud y seguridad ocupacional de la gente. </br>
+          	Asumir la seguridad e integridad de nuestros trabajadores como lo más importante,</br> sin comprometer nada que tenga relación con este tema.</br>
+          	Proveer productos de construcción que cumplan con las políticas de seguridad de uso.</br>
+          	Respetar la dignidad, privacidad y derechos personales de cada una de las personas.</br>
+          	Trabajar en pro de la conservación de los recursos naturales y la reducción de residuos peligrosos.</br>
+          	Competir por nuestros clientes sobre la base de valor y la calidad de nuestros productos, servicios y ofertas.</br>
 
-
+          </p>
+        </div>
+    </div>
         <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
