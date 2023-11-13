@@ -88,8 +88,7 @@
   <div class="text-center">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{ asset('img/corr1.jpg') }}" style="width: 800px;"  alt="...">
-                  
+      <img src="{{ asset('img/corr1.jpg') }}" style="width: 800px;"  alt="...">                 
     </div>
     <div class="carousel-item">
       <img src="{{ asset('img/corr2.png') }}" style="width: 800px;" alt="...">
@@ -111,7 +110,11 @@
   </button>
 </div>
 </div>
-  
+</br>
+<div class="text-center">
+<h2>Sobre Nosotros</h2>
+</div>
+
 
         <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
