@@ -34,7 +34,7 @@ class ProductsTableSeeder extends Seeder
             'stock_minimo'=>50,
             'stock_repo'=>30,
             'id_proveedor' => 30501111127,
-            'image_path' => 'cemento.png'
+            'image_path' => 'cal.png'
         ]);
 
         Product::create([
@@ -46,7 +46,7 @@ class ProductsTableSeeder extends Seeder
             'stock_minimo'=>40,
             'stock_repo'=>20,
             'id_proveedor' => 30501111127,
-            'image_path' => 'cemento.png'
+            'image_path' => 'pegamento.png'
         ]);
     }
 }

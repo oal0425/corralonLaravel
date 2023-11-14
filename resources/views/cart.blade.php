@@ -2,7 +2,7 @@
 
 <style>
     .btn btn-dark btn-sm{
-        
+
     }
 </style>
 
@@ -100,10 +100,10 @@
                         </ul>
                     </div>
                     <br><a href="/shop" class="btn btn-dark">Continuar Comprando</a>
-                    <br>
+
 
                     <a href="{{url('generar_detalle') }}" class="btn btn-success">Generar Factura</a>
-                    <a href="{{url('imprimir_proveedor')}}" class="btn btn-outline-primary"> Imprimir </a>
+
                 </div>
             @endif
         </div>

@@ -27,7 +27,7 @@
                     <div class="card-body p-md-5 mx-md-4">
 
                       <div class="text-center">
-                        <img src="{{ asset('img/logo_transp.png') }}" 
+                        <img src="{{ asset('img/logo_transp.png') }}"
                           style="width: 185px;" alt="logo">
                         <h4 class="mt-1 mb-5 pb-1">INICIAR SESION</h4>
                       </div>
@@ -40,7 +40,7 @@
                         <label class="form-label" for="form2Example11">Email</label>
                           <input type="email" id="form2Example11" name="email" class="form-control"
                             placeholder="Ingresa tu correo" />
-                          
+
                         </div>
 
                         <div class="form-outline mb-4">
@@ -51,13 +51,9 @@
 
                         <div class="text-center pt-1 mb-5 pb-1">
                           <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Ingresar </button>
-                          <a class="text-muted" href="#!">Olvidaste tu contraseña?</a>
+
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2">No tienes cuenta? Registrate</p>
-                          <a href="{{route('register')}}" class="btn btn-outline-success">Crea tu cuenta</a>
-                        </div>
 
                       </form>
 
