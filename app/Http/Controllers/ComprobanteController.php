@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\comprobante;
+use App\Models\cliente;
+use App\Models\Detalle;
 use App\Models\Producto;
+use App\Models\comprobante;
 use Illuminate\Http\Request;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\Cast\Double;
 
 class ComprobanteController extends Controller
 {
@@ -15,9 +18,8 @@ class ComprobanteController extends Controller
     public function index()
     {
         $comprobantes = Comprobante::all();
-        $usuarios = User::all();
-        $productos = Producto::all();
-        return view('comprobante.index', compact('comprobantes','usuarios', 'productos'));
+        $detalles = Detalle::all();
+        return view('comprobante.index', compact('comprobantes', 'detalles'));
     }
 
     /**
@@ -31,12 +33,12 @@ class ComprobanteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    static public function store(Detalle $detalle, float $total)
     {
         $comprobantes = new Comprobante;
-        $comprobantes->tipo = $request->input('tipo');
-        $comprobantes->fecha = $request->input('fecha');
-        $comprobantes->id_usuario = $request->input('id_usuario');
+        $comprobantes->id_detalle =$detalle->id;
+        $comprobantes->total=$total;
+        $comprobantes->fecha = $detalle->fecha;
         $comprobantes->save();
         return redirect()->back();
     }
@@ -62,12 +64,13 @@ class ComprobanteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /*
         $comprobantes = Comprobante::find($id);
-        $comprobantes->tipo = $request->input('tipo');
-        $comprobantes->fecha = $request->input('fecha');
+        //$comprobantes->fecha = $request->input('fecha');
         $comprobantes->id_usuario = $request->input('id_usuario');
         $comprobantes->save();
         return redirect()->back();
+        */
     }
 
     /**
@@ -75,8 +78,10 @@ class ComprobanteController extends Controller
      */
     public function destroy($id)
     {
+        /*
         $comprobantes = Comprobante::find($id);
         $comprobantes->delete();
         return redirect()->back();
+        */
     }
 }

@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <title>Title</title>
+  <title>Login</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,36 +27,33 @@
                     <div class="card-body p-md-5 mx-md-4">
 
                       <div class="text-center">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                        <img src="{{ asset('img/logo_transp.png') }}"
                           style="width: 185px;" alt="logo">
                         <h4 class="mt-1 mb-5 pb-1">INICIAR SESION</h4>
                       </div>
-
+                      <h6>Ingresa tu correo y contraseña</h6>
                       <form action="{{route ('login')}}" method = 'POST'>
                         @csrf
-                        <p>Ingresa tu correo y contrasenia</p>
+</br>
 
                         <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example11">Email</label>
                           <input type="email" id="form2Example11" name="email" class="form-control"
                             placeholder="Ingresa tu correo" />
-                          <label class="form-label" for="form2Example11">email</label>
+
                         </div>
 
                         <div class="form-outline mb-4">
-                            <label class="form-label" for="form2Example22">Pass</label>
+                            <label class="form-label" for="form2Example22">Contraseña</label>
                             <input type="password" id="form2Example22" name="password" class="form-control" />
 
                         </div>
 
                         <div class="text-center pt-1 mb-5 pb-1">
                           <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Ingresar </button>
-                          <a class="text-muted" href="#!">Olvidaste tu pass?</a>
+
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2">No tienes cuenta? Registrate</p>
-                          <a href="{{route('register')}}" class="btn btn-outline-danger">Crea tu cuenta</a>
-                        </div>
 
                       </form>
 
@@ -64,10 +61,8 @@
                   </div>
                   <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 class="mb-4">We are more than just a company</h4>
-                      <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <h4 class="mb-4">Más que un negocio</h4>
+                      <p class="small mb-0">Ofrecemos excelente calidad de material para la construcción y buscamos seguir creciendo y brindar lo mejor a nuestros clientes</p>
                     </div>
                   </div>
                 </div>

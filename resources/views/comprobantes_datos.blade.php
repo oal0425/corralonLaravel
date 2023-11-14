@@ -15,10 +15,10 @@
         <tbody>
             @foreach($comprobantes as $comprobante)
             <tr class="">
-                <td scope="row">{{$comprobantes->id}}</td>
-                <td>{{$comprobantes->tipo}}</td>
-                <td>{{$comprobantes->fecha}}</td>
-                <td>{{$comprobantes->Cliente->id}}</td>
+                <td scope="row">{{$comprobante->id}}</td>
+                <td>{{$comprobante->id_detalle}}</td>
+                <td>{{$comprobante->total}}</td>
+                <td>{{$comprobante->fecha}}</td>
 
             </tr>
             @endforeach

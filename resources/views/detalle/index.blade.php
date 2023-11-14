@@ -1,13 +1,7 @@
-@extends('welcome')
-
+@extends('layouts.initial')
 @section ('content')
 
-<div>
-    <br>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
-        NUEVO
-    </button>
-</div>
+<h5>Detalles</h5>
 
 <div class="table-responsive">
     <br>
@@ -15,37 +9,34 @@
         <thead class="bg-dark text-white">
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">ID COMPROBANTE</th>
                 <th scope="col">ID PRODUCTO</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">PRECIO</th>
                 <th scope="col">CANTIDAD</th>
-                <th scope="col">ACCIONES</th>
-
+                <th scope="col">TOTAL</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach($detalles as $detalle)
-            <tr class="">
-                <td scope="row">{{$detalle->id}}</td>
-                <td>{{$detalle->Comprobante->id}}</td>
-                <td>{{$detalle->Producto->id}}</td>
-                <td>{{$detalle->cantidad}}</td>
-
-                <td>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$detalle->id}}">
-                        EDITAR
-                    </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$detalle->id}}">
-                        ELIMINAR
-                    </button>
-                </td>
-            </tr>
-            @include('detalle.info')
-            @endforeach
-        </tbody>
+<tbody>
+    @foreach($detalles1 as $detalle)
+    <tr>
+        <td scope="row">{{ $detalle->id }}</td>
+        @foreach ($detalle->productos as $producto)
+            <td>{{ $producto->id_producto }}</td>
+            <td>{{ $producto->name }}</td>
+            <td>{{ $producto->price }}</td>
+            <td>{{ $producto->quantity }}</td>
+            <td>{{ $producto->total }}</td>
+        @endforeach
+        <td>
+            <a href="{{ url('imprimir_detalle') }}" class="btn btn-outline-primary">Imprimir</a>
+        </td>
+    </tr>
+    @endforeach
+</tbody>
     </table>
 </div>
 
-@include('detalle.create')
+
 
 
 @endsection

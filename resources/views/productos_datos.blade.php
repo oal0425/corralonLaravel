@@ -14,7 +14,7 @@
                 <th scope="col">STOCK MINIMO</th>
                 <th scope="col">STOCK REPOSICION</th>
                 <th scope="col">PROVEEDOR</th>
-                <th scope="col">ACCIONES</th>
+
 
             </tr>
         </thead>

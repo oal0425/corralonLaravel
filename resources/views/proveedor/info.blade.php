@@ -3,7 +3,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">EDITAR PROVEEDOR</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Editar Proveedor</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="{{route('proveedores.update', $proveedor->id)}}" method="POST">
@@ -11,7 +11,7 @@
             {{ method_field('put')}}
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="" class="form-label">RAZON SOCIAL</label>
+                    <label for="" class="form-label">Razón Social</label>
                     <input type="text"
                 class="form-control" name="razon_social" id="" aria-describedby="helpId" placeholder="" value="{{$proveedor->razon_social}}">
                 </div>

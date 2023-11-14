@@ -16,6 +16,7 @@ class ProveedorController extends Controller
         return view('proveedor.index', compact('proveedores'));
     }
 
+ 
     /**
      * Show the form for creating a new resource.
      */

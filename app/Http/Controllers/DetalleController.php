@@ -3,21 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detalle;
-use App\Models\Producto;
+use App\Models\Product;
+use App\Models\Cliente;
 use App\Models\Comprobante;
 use Illuminate\Http\Request;
 
 class DetalleController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $detalles = Detalle::all();
-        $productos = Producto::all();
-        $comprobantes = Comprobante::all();
-        return view('detalle.index', compact('detalles','productos','comprobantes'));
+        $detalles1 = [];
+        foreach ($detalles as $detalle){
+            $detalle->productos = json_decode($detalle->productos);
+            array_push($detalles1,$detalle);
+        }
+        return view('detalle.index', compact('detalles1'));
 
     }
 
@@ -34,11 +39,44 @@ class DetalleController extends Controller
      */
     public function store(Request $request)
     {
+        /*
+        $carro = $request->input('carro_lleno');
         $detalles = new Detalle;
-        $detalles->id_comprobante = $request->input('id_comprobante');
-        $detalles->id_producto = $request->input('id_producto');
-        $detalles->cantidad = $request->input('cantidad');
+        $detalles->id_producto = $carro->id;
+        $detalles->nombre = $carro->name;
+        $detalles->precio = $carro->price;
+        $detalles->cantidad = $carro->quantity;
+        $detalles->total = \Cart::getTotal();
         $detalles->save();
+        return redirect()->back();
+        */
+    }
+
+    public function generar_detalle(Request $request)
+    {
+        $carro = \Cart::getContent();
+        $comprobante = new Comprobante();
+        $array_productos = [];
+        foreach ($carro as $item)
+        {
+            $array = array(
+                "id_producto" => $item->id,
+                "name" => $item->name,
+                "price" => $item->price,
+                "quantity" => $item->quantity,
+                "total" => $item->price * $item->quantity,
+            );
+            array_push($array_productos, $array);
+        }
+        $detalles = new Detalle;
+        $detalles->productos = json_encode($array_productos);
+        $detalles->id_usuario = auth()->id();
+        $detalles->fecha = now();
+        $total_venta = \Cart::getTotal();
+        $detalles->save();
+        //$comprobante->store($detalles);
+        $comprobante = ComprobanteController::store($detalles,$total_venta);
+
         return redirect()->back();
     }
 
@@ -77,5 +115,16 @@ class DetalleController extends Controller
         $detalles = Detalle::find($id);
         $detalles->delete();
         return redirect()->back();
+    }
+
+    public function buscar_cliente($id)
+    {
+        return Cliente::find($id);
+
+    }
+
+    public function decodificar_productos(Detalle $detalle)
+    {
+        return $detalle->productos = json_decode($detalle->producto);
     }
 }
