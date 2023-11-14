@@ -1,12 +1,15 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section ('content')
+<h5>Proveedores</h5>
 
 <div>
     <br>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
-        NUEVO
+        Nuevo Proveedor
     </button>
+
+    <a href="{{url('imprimir_proveedor')}}" class="btn btn-outline-primary" > Imprimir </a>
 </div>
 
 <div class="table-responsive">
@@ -14,12 +17,12 @@
     <table class="table">
         <thead class="bg-dark text-white">
             <tr>
-                <th scope="col">CUIT</th>
-                <th scope="col">RAZON SOCIAL</th>
-                <th scope="col">DIRECCION</th>
-                <th scope="col">TELEFONO</th>
-                <th scope="col">LOCALIDAD</th>
-                <th scope="col">ACCIONES</th>
+                <th scope="col">Cuit</th>
+                <th scope="col">Razon Social</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Localidad</th>
+                <th scope="col">Acciones</th>
 
             </tr>
         </thead>
@@ -34,12 +37,11 @@
 
                 <td>
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit{{$proveedor->id}}">
-                        EDITAR
+                        Editar
                     </button>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$proveedor->id}}">
-                        ELIMINAR
+                        Eliminar
                     </button>
-                    <a href="{{url('imprimir_proveedor')}}" class="btn btn-outline-primary"> Imprimir </a>
                 </td>
             </tr>
             @include('proveedor.info')
@@ -52,3 +54,4 @@
 
 
 @endsection
+

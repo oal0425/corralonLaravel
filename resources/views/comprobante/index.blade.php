@@ -1,6 +1,9 @@
-@extends('welcome')
+@extends('layouts.initial')
 
 @section ('content')
+
+<h5>Comprobantes</h5>
+</br>
 
 <div>
 

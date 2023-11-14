@@ -115,7 +115,7 @@ class GeneradorController extends Controller
 
     public function imprimir_comprobantes(){
         $comprobantes = Comprobante::all();
-        $pdf = PDF::loadView('comprobante_datos',compact('comprobantes'));
+        $pdf = PDF::loadView('comprobantes_datos',compact('comprobantes'));
         return $pdf->download('comprobante_datos.pdf');
     }
 

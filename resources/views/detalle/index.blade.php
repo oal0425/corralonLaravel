@@ -1,13 +1,7 @@
-@extends('welcome')
-
+@extends('layouts.initial')
 @section ('content')
 
-<div>
-    <br>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
-        NUEVO
-    </button>
-</div>
+<h5>Detalles</h5>
 
 <div class="table-responsive">
     <br>
@@ -22,25 +16,23 @@
                 <th scope="col">TOTAL</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach($detalles1 as $detalle)
-            <tr class="">
-                <td scope="row">{{$detalle->id}}</td>
-                @foreach ($detalle->productos as $producto )
-                    <td> {{ $producto->id_producto }} </td>
-                    <td> {{ $producto->name }} </td>
-                    <td> {{ $producto->price }} </td>
-                    <td> {{ $producto->quantity }} </td>
-                    <td> {{ $producto->total }} </td>
-                @endforeach
-
-                <td>
-                    <a href="{{url('imprimir_detalle')}}" class="btn btn-outline-primary"> Imprimir </a>
-                </td>
-            </tr>
-
-            @endforeach
-        </tbody>
+<tbody>
+    @foreach($detalles1 as $detalle)
+    <tr>
+        <td scope="row">{{ $detalle->id }}</td>
+        @foreach ($detalle->productos as $producto)
+            <td>{{ $producto->id_producto }}</td>
+            <td>{{ $producto->name }}</td>
+            <td>{{ $producto->price }}</td>
+            <td>{{ $producto->quantity }}</td>
+            <td>{{ $producto->total }}</td>
+        @endforeach
+        <td>
+            <a href="{{ url('imprimir_detalle') }}" class="btn btn-outline-primary">Imprimir</a>
+        </td>
+    </tr>
+    @endforeach
+</tbody>
     </table>
 </div>
 

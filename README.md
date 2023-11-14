@@ -37,42 +37,42 @@ Cómo comenzar:
 ```
 
 3. MIGRACIONES
+
 ```
      php artisan migrate
 ```
 
-4. Ejecutamos el siguiente codigo para hacer funcionar el "sembrador"
+4. Ejecutamos los siguientes comandos
 ```
-php artisan db:seed --class=PermissionTableSeeder
+    php artisan db:seed --class=PermissionTableSeeder
+
+    php artisan db:seed --class=CreateAdminUserSeeder
 ```
-4. Creamos la semilla para el usuario Admin
-   ```
-   php artisan db:seed --class=CreateAdminUserSeeder
-   ```
 
 
 5. Ejecutamos los siguientes comandos
 ```
-   php artisan make:seed ProductsTableSeeder
+   php artisan migrate --seed
 ```
    
 6. Ejecutamos los siguientes comandos
 ```
 npm install
 ```
-6. Ejecutamos los siguientes comandos
+
+7. Ejecutamos los siguientes comandos
 ```
 npm run build
 ```   
 
-9. Ahora, ejecutaremos el proyecto Laravel con el siguiente comando:
+8. Ahora, ejecutaremos el proyecto Laravel con el siguiente comando:
 
 ```
     php artisan serve
 ```
 
 
-6. Listo, ya podes revisar todo lo que esta implementado en el programa. Se debe abrir el navegador y escribir la siguiente direccion URL para ingresar a la App.
+8. Listo, ya podes revisar todo lo que esta implementado en el programa. Se debe abrir el navegador y escribir la siguiente direccion URL para ingresar a la App.
 
 ```
 http://127.0.0.1:8000/

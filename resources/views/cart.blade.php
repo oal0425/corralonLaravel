@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+<style>
+    .btn btn-dark btn-sm{
+
+    }
+</style>
+
 @section('content')
     <div class="container" style="margin-top: 80px">
         <nav aria-label="breadcrumb">
@@ -71,7 +77,8 @@
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{ $item->id }}" id="id" name="id">
-                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"  ><i class="bi bi-trash"></i></i></button>
+
                                 </form>
                             </div>
                         </div>
@@ -93,10 +100,10 @@
                         </ul>
                     </div>
                     <br><a href="/shop" class="btn btn-dark">Continuar Comprando</a>
-                    <br>
+
 
                     <a href="{{url('generar_detalle') }}" class="btn btn-success">Generar Factura</a>
-                    <a href="{{url('imprimir_proveedor')}}" class="btn btn-outline-primary"> Imprimir </a>
+
                 </div>
             @endif
         </div>
