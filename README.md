@@ -42,22 +42,30 @@ Cómo comenzar:
      php artisan migrate
 ```
 
-
 4. Ejecutamos los siguientes comandos
+```
+    php artisan db:seed --class=PermissionTableSeeder
+
+    php artisan db:seed --class=CreateAdminUserSeeder
+```
+
+
+5. Ejecutamos los siguientes comandos
 ```
    php artisan migrate --seed
 ```
    
-5. Ejecutamos los siguientes comandos
+6. Ejecutamos los siguientes comandos
 ```
 npm install
 ```
-6. Ejecutamos los siguientes comandos
+
+7. Ejecutamos los siguientes comandos
 ```
 npm run build
 ```   
 
-7. Ahora, ejecutaremos el proyecto Laravel con el siguiente comando:
+8. Ahora, ejecutaremos el proyecto Laravel con el siguiente comando:
 
 ```
     php artisan serve
