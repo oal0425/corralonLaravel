@@ -1700,7 +1700,7 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.4.1",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
